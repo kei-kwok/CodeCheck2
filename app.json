@@ -50,18 +50,18 @@
     "lib/home/index"
   ],
   "window": {
-  "navigationBarBackgroundColor": "#85c43f",
-  "navigationBarTitleText": "聚惠星",
-  "enablePullDownRefresh": true,
-  "navigationBarTextStyle": "white",
-  "backgroundColor": "#FFFFFF",
-  "backgroundTextStyle": "dark"
-},
-  "tabBar": {
-    "backgroundColor": "#fafafa",
-    "borderStyle": "white",
-    "selectedColor": "#85c43f",
-    "color": "#666",
+    "navigationBarBackgroundColor": "#fafafa",
+    "navigationBarTitleText": "MOON商城",
+    "enablePullDownRefresh": true,
+    "navigationBarTextStyle": "black",
+    "backgroundColor": "#f8f8f8",
+    "backgroundTextStyle": "dark"
+  },
+    "tabBar": {
+      "backgroundColor": "#fafafa",
+      "borderStyle": "white",
+      "selectedColor": "#85c43f",
+      "color": "#666",
     "list": [
       {
         "pagePath": "pages/index/index",

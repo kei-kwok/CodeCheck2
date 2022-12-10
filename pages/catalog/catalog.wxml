@@ -2,7 +2,7 @@
   <view class="search">
     <navigator url="/pages/search/search" class="input jhx_bg1">
       <image class="icon"></image>
-      <text class="txt jhx_f1">搜索, 共{{goodsCount}}款商品</text>
+      <text class="txt jhx_f1">商品搜索</text>
     </navigator>
   </view>
   <view class="catalog">

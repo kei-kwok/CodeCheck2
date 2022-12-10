@@ -7,21 +7,81 @@ const app = getApp();
 
 Page({
   data: {
-    newGoods: [],
-    hotGoods: [],
-    topics: [],
-    brands: [],
-    groupons: [],
-    floorGoods: [],
-    banner: [],
-    channel: [],
-    coupon: [],
-    articles:[],
-    goodsCount: 0,
+    item:{
+    },
+    msg1:'1',
+    noramalData: [
+    {
+      index:"0",
+      tuijian:"",
+      cover:"//tse3-mm.cn.bing.net/th/id/OIP-C.e4LeYaIf0ol6CacP9ZwQagHaLG?w=203&h=304&c=7&r=0&o=5&dpr=1.3&pid=1.7",
+      title:"美食",
+      tx:"//tse3-mm.cn.bing.net/th/id/OIP-C.e4LeYaIf0ol6CacP9ZwQagHaLG?w=203&h=304&c=7&r=0&o=5&dpr=1.3&pid=1.7",
+      name:"美食",
+      love:"111",
+      num:"111",
+    },
+    {
+      index:"1",
+      cover:"//tse3-mm.cn.bing.net/th/id/OIP-C.e4LeYaIf0ol6CacP9ZwQagHaLG?w=203&h=304&c=7&r=0&o=5&dpr=1.3&pid=1.7",
+      title:"美食",
+      tx:"//tse3-mm.cn.bing.net/th/id/OIP-C.e4LeYaIf0ol6CacP9ZwQagHaLG?w=203&h=304&c=7&r=0&o=5&dpr=1.3&pid=1.7",
+      name:"美食",
+      love:"111",
+      num:"111",
+    },
+    ],
+    // 轮播图
+    banner: [ 
+      {url:"//tse4-mm.cn.bing.net/th/id/OIP-C.WCqeGtPisiaW77NrCdANbgHaE8?w=298&h=197&c=7&r=0&o=5&dpr=1.3&pid=1.7"},
+      {url:"//tse3-mm.cn.bing.net/th/id/OIP-C.KkPqg6uB5i98OKrhDpkfmQHaEY?w=293&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7"},
+      {url:"//tse4-mm.cn.bing.net/th/id/OIP-C.QBFNFDqiU2F2oFn0OyOCdAHaEc?w=298&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7"}
+      // {
+      //   id:"106383857430822913"
+      // }
+    ],
+    channel: [
+      {
+        id:"clothes",
+        name:"服装",
+        iconUrl:"https://tse1-mm.cn.bing.net/th/id/OIP-C.57yjdcY4y824n7zPiTawBwHaLH?w=200&h=300&c=7&r=0&o=5&dpr=1.3&pid=1.7",
+      },
+      {
+        id:"jewelry",
+        name:"饰品",
+        iconUrl:"https://tse1-mm.cn.bing.net/th/id/OIP-C.VKFEZZhGnB9DopYpRAjEegHaHa?w=183&h=183&c=7&r=0&o=5&dpr=1.3&pid=1.7",
+      },
+      {
+        id:"electronics",
+        name:"电子产品",
+        iconUrl:"https://tse1-mm.cn.bing.net/th/id/OIP-C.NisxpXe4ceIupr_bBSQvpgHaEK?w=301&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7",
+      },
+      {
+        id:"tea",
+        name:"茶饮",
+        iconUrl:"https://tse1-mm.cn.bing.net/th/id/OIP-C.kxU-riMn3zinJ6d18I7YiAHaLH?w=203&h=304&c=7&r=0&o=5&dpr=1.3&pid=1.7",
+      },
+      {
+        id:"facility",
+        name:"便民设施",
+        iconUrl:"https://tse2-mm.cn.bing.net/th/id/OIP-C.QqxRlmiJGgwk2JykgtNdIwHaHa?w=209&h=208&c=7&r=0&o=5&dpr=1.3&pid=1.7",
+      },
+      {
+        id:"food",
+        name:"食品",
+        iconUrl:"https://tse2-mm.cn.bing.net/th/id/OIP-C.7tl8xXNvneFqZjmwX8bIjwHaE8?w=298&h=199&c=7&r=0&o=5&dpr=1.3&pid=1.7",
+      },
+    ],
     indicatorDots: false,
     window: false,
     colseCoupon:false
   },
+  /**
+   * 生命周期函数--监听页面初次渲染完成
+   */
+  // onReady: function () {
+    
+  // },
 
   onShareAppMessage: function() {
     let userInfo = wx.getStorageSync('userInfo');
@@ -31,8 +91,8 @@ Page({
     }
     console.log('/pages/index/index?shareUserId=' + shareUserId);
     return {
-      title: '聚惠星',
-      desc: '长沙市聚惠星科技与您共约',
+      title: 'MOON商城',
+      desc: '欢迎使用MOON商城',
       path: '/pages/index/index?shareUserId=' + shareUserId
     }
   },
@@ -49,16 +109,9 @@ Page({
     util.request(api.IndexUrl).then(function(res) {
       if (res.errno === 0) {
         that.setData({
-          newGoods: res.data.newGoodsList,
-          hotGoods: res.data.hotGoodsList,
-          topics: res.data.topicList,
-          brands: res.data.brandList,
-          floorGoods: res.data.floorGoodsList,
           banner: res.data.banner,
-          articles: res.data.articles,
-          groupons: res.data.grouponList,
           channel: res.data.channel,
-          coupon: res.data.couponList
+          noramalData: res.data.noramalData,
         });
       }
     });
@@ -72,6 +125,13 @@ Page({
     this.setData({
       colseCoupon: false
     });
+    // 1.发送异步请求获取轮播图数据
+    // wx.request({
+    //   url: 'https://624w0n2786.yicp.fun/main/swiper',
+    //   success: (result) => {
+    //     console.log(result);
+    //   }
+    // })
     //如果有分享用户，则设置
     if (options.shareUserId){
       wx.setStorageSync('shareUserId', options.shareUserId);
@@ -154,60 +214,27 @@ Page({
     let userInfo = wx.getStorageSync('userInfo');
     if (!that.data.colseCoupon && userInfo && that.data.coupon.length > 0) {
       that.setData({ window: true });
-    }
-  },
-  onShow: function() {
-    // 每次页面显示，需获取是否用户登录，如果用户登录，则查询用户是否有优惠券，有则弹出优惠券领取窗口
-    let that = this;
-    let userInfo = wx.getStorageSync('userInfo');
-    if (userInfo){
-      util.request(api.GetUserCoupon, null, 'GET').then(res => {
-        if (res.errno === 0) {
-		    that.setData({
-		          coupon: res.data.couponList
-		   });
-		   
-		   if (!that.data.colseCoupon && userInfo && that.data.coupon.length > 0) {
-		      that.setData({ window: true });
-		   } else {
-		      that.setData({window:false});
-		   }
+    };
+    // 商家推荐
+    const db= wx.cloud.database();
+    db.collection('index').where({
+      name:'tuijian'
+    })
+    .get({
+      success: (res)=>{
+        // res.data 是包含以上定义的两条记录的数组
+        console.log(res.data);
+        console.log(this);
+        
+        this.setData({
+          noramalData:res.data[0]
+        })
+        console.log(res.data[0]);
+        this.setData({
+        item:{
         }
       })
-    }
-
-  },
-  onHide: function() {
-    // 页面隐藏
-  },
-  onUnload: function() {
-    // 页面关闭
-  },
-  onColse: function () {
-    this.setData({
-       window: false,
-       colseCoupon:true
-     });
-  },
-  getCoupon(e) {
-    if (!app.globalData.hasLogin) {
-      wx.navigateTo({
-        url: "/pages/auth/login/login"
-      });
-    }
-
-    let couponId = e.currentTarget.dataset.index
-    util.request(api.CouponReceive, {
-      couponId: couponId
-    }, 'POST').then(res => {
-      if (res.errno === 0) {
-        wx.showToast({
-          title: "领取成功"
-        })
       }
-      else{
-        util.showErrorToast(res.errmsg);
-      }
-    })
+    });
   },
 })
