@@ -51,10 +51,10 @@
           <text class="label">商品合计：</text>
           <text class="txt">￥{{orderInfo.goodsPrice}}</text>
         </view>
-        <view class="t">
+        <!-- <view class="t">
           <text class="label">运费：</text>
           <text class="txt">￥{{orderInfo.freightPrice}}</text>
-        </view>
+        </view> -->
         <view class="t">
           <text class="label">优惠减免：</text>
           <text class="txt">- ￥{{orderInfo.discountPrice}}</text>

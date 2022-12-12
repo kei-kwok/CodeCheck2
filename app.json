@@ -8,7 +8,6 @@
     "pages/ucenter/main/index",
     "pages/ucenter/address/address",
     "pages/ucenter/addressAdd/addressAdd",
-    "pages/ucenter/feedback/feedback",
     "pages/ucenter/footprint/footprint",
     "pages/ucenter/order/order",
     "pages/ucenter/orderDetail/orderDetail",
@@ -44,7 +43,6 @@
     "pages/brokerage/order/order",
     "pages/brokerage/record/record",
     "pages/brokerage/withdrawal/withdrawal",
-    "pages/ucenter/expressInfo/expressInfo",
     "pages/article/article",
     "lib/coupon-window/index",
     "lib/home/index"

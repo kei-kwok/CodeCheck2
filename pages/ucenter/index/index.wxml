@@ -32,13 +32,13 @@
          </view>
          <view class='item' hover-class='none' bindtap='goPages' data-url='/pages/ucenter/couponList/couponList'>
             <view class='title'>优惠券</view>
-            <view class='text'><text class='iconfont icon-youhuiquan' style="color:#FF654B;margin-right:8rpx;"></text>{{couponCount || 0}}</view>
+            <view class='text'><text class='iconfont icon-youhuiquan' style="color:#FF654B;margin-right:8rpx;"></text>{{couponCount || 2}}</view>
          </view>
       </view>
       <view class='myOrder'>
         <view class='title acea-row row-between-wrapper'>
            <view class='jhx_f4'>我的订单</view>
-           <view class='allOrder jhx_f6' hover-class='none' bindtap='goOrder'>全部订单<text class='iconfont icon-jiantou'></text></view>
+           <!-- <view class='allOrder jhx_f6' hover-class='none' bindtap='goOrder'>全部订单<text class='iconfont icon-jiantou'></text></view> -->
         </view>
         <view class='orderState acea-row row-middle'>
            <view class='item' hover-class='none' bindtap='goOrderIndex' data-index='1' data-route='/pages/ucenter/order/order'>
@@ -48,27 +48,27 @@
               </view>
               <view class='jhx_f2'>待付款</view>
            </view>
-            <view class='item' hover-class='none'  bindtap='goOrderIndex' data-index='2' data-route='/pages/ucenter/order/order'>
+            <!-- <view class='item' hover-class='none'  bindtap='goOrderIndex' data-index='2' data-route='/pages/ucenter/order/order'>
               <view class='pictrue'>
                 <text class="item_badge" wx:if="{{order.unship != 0}}">{{order.unship}}</text>
                 <image src='/static/images/dfh.png'></image>
               </view>
               <view class='jhx_f2'>待发货</view>
-           </view>
+           </view> -->
             <view class='item' hover-class='none'  bindtap='goOrderIndex' data-index='3' data-route='/pages/ucenter/order/order'>
               <view class='pictrue'>
               <text class="item_badge" wx:if="{{order.unrecv != 0}}">{{order.unrecv}}</text>
               <image src='/static/images/dsh.png'></image>
               </view>
-              <view class='jhx_f2'>待收货</view>
+              <view class='jhx_f2'>未完成</view>
            </view>
-            <view class='item' hover-class='none'  bindtap='goOrderIndex' data-index='4' data-route='/pages/ucenter/order/order'>
+            <!-- <view class='item' hover-class='none'  bindtap='goOrderIndex' data-index='4' data-route='/pages/ucenter/order/order'>
               <view class='pictrue'>
               <text class="item_badge" wx:if="{{order.uncomment != 0}}">{{order.uncomment}}</text>
               <image src='/static/images/dpj.png'></image>
               </view>
               <view class='jhx_f2'>待评价</view>
-           </view>
+           </view> -->
             <view class='item' hover-class='none' bindtap='goOrder'>
               <view class='pictrue'><image src='/static/images/sh.png'></image></view>
               <view class='jhx_f2'>所有订单</view>
@@ -82,10 +82,10 @@
               <view class='pictrue'><image src='/static/images/{{item.pic}}'></image></view>
               <view class='jhx_f2'>{{item.name}}</view>
             </view>
-            <button class='item' open-type='contact' hover-class='none'>
+            <!-- <button class='item' open-type='contact' hover-class='none'>
               <view class='pictrue'><image src='/static/images/customer.png'></image></view>
               <view class='jhx_f2'>联系客服</view>
-            </button>
+            </button> -->
          </view>
       </view>
    </view>
