@@ -1,6 +1,6 @@
 // 以下是业务服务器API地址
  // 本机开发API地址
-var WxApiRoot = 'http://localhost:8080/demo/wx/';
+var WxApiRoot = 'https://624w0n2786.yicp.fun';
 // 测试环境部署api地址
 // var WxApiRoot = 'http://192.168.0.101:8070/demo/wx/';
 // 线上云平台api地址

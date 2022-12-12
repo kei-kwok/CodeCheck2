@@ -1,4 +1,4 @@
-<import src ="../templates/tuijian/tuijian.wxml"/>
+<!-- <import src ="../templates/tuijian/tuijian.wxml"/> -->
 <!--index.wxml-->
 <view class="container">
 <!-- 搜索 -->  
@@ -34,18 +34,32 @@
     </view>
    
     <!-- 瀑布流布局 -->
-      <view class="left">
-        <block wx:for="{{noramalData.tuijian}}" wx:key="index" wx:for-item="tuijian">
-          <template is="{{msg1}}" data="{{tuijian}}" wx:if="{{index%2==0}}"></template>
-        </block>
-      </view>
-      <view class="right">
-        <block wx:for="{{noramalData.tuijian}}" wx:key="index" wx:for-item="tuijian">
-          <template is="{{msg1}}" data="{{tuijian}}" wx:if="{{index%2==1}}"></template>
-        </block>
-      </view>
+      <!-- <template> -->
+    <!-- <view class="Index"> -->
+        <!-- 瀑布流布局列表 -->
+        <view class="pubuBox">
+            <view class="pubuItem">
+                <view class="item-masonry" wx:for="{{comList}}" wx:key="index">
+                    <image src="{{item.img}}" mode="widthFix"></image>
+                    <view class="listtitle"> <!-- 这是没有高度的父盒子（下半部分） -->
+                        <view class="listtitle1">{{ item.name }}</view>
+                        <view class="listtitle2">
+                            <text class="listtitle2son">￥</text>
+                            {{ item.commdityPrice }}
+                        </view>
+                        <view class="listtitle3">
+                            xxx旗舰店
+                        </view>
+                    </view>
+                </view>
+            </view>
+        </view>
+    <!-- </view> -->
+<!-- </template> -->
   </view>
 </view>
   
 <coupon-window window='{{window}}' couponList="{{coupon}}" bind:onColse="onColse"></coupon-window>
+
+
 

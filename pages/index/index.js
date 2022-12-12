@@ -6,6 +6,7 @@ const user = require('../../utils/user.js');
 const app = getApp();
 
 Page({
+  onShow() {},
   data: {
     item:{
     },
@@ -72,6 +73,29 @@ Page({
         iconUrl:"https://tse2-mm.cn.bing.net/th/id/OIP-C.7tl8xXNvneFqZjmwX8bIjwHaE8?w=298&h=199&c=7&r=0&o=5&dpr=1.3&pid=1.7",
       },
     ],
+    comList: [{
+      img: "https://tse3-mm.cn.bing.net/th/id/OIP-C.sz0z2jR--3aelpZ5g42htwHaLH?w=115&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7",
+      name: '商品的名称，可以很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长',
+      commdityPrice: 100
+  }, {
+      img: 'http://pic.sc.chinaz.com/Files/pic/pic9/202002/zzpic23327_s.jpg',
+      name: '商品名称会在超出两行时候自动折叠',
+      commdityPrice: 100
+  },
+  {
+      img: 'http://pic1.sc.chinaz.com/Files/pic/pic9/202002/zzpic23343_s.jpg',
+      name: '只有一行标题时高度为39',
+      commdityPrice: 100
+  }, {
+      img: 'http://pic1.sc.chinaz.com/Files/pic/pic9/202002/zzpic23343_s.jpg',
+      name: '具体样式您可以自定义',
+      commdityPrice: 100
+  }, {
+      img: 'http://pic2.sc.chinaz.com/Files/pic/pic9/202002/hpic2119_s.jpg',
+      name: 'vue的H5页面也是如此使用',
+      commdityPrice: 100
+  }
+], //商品列表
     indicatorDots: false,
     window: false,
     colseCoupon:false
