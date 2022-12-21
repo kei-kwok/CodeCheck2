@@ -4,7 +4,7 @@
          <view class='pictrue'><image src='{{userInfo.avatarUrl}}'></image></view>
          <view class='text'>
             <view class='acea-row row-middle'>
-               <view class='name line1'>{{userInfo.nickName || '请授权'}}</view>
+               <view class='name line1'>{{'圆圆' || '请授权'}}</view>
             </view>
             <view class='id'>用户编号：1000{{userInfo.userId || 0}}</view>
          </view>

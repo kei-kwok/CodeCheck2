@@ -11,9 +11,9 @@ Page({
     totalPages: 1
   },
   getFootprintList() {
-    wx.showLoading({
-      title: '加载中...',
-    });
+    // wx.showLoading({
+    //   title: '加载中...',
+    // });
     let that = this;
     util.request(api.FootprintList, {
       page: that.data.page,

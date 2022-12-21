@@ -7,7 +7,8 @@ Page({
     showType: 0,
     page: 1,
     size: 10,
-    totalPages: 1
+    totalPages: 1,
+    customerId:1,
   },
   onLoad: function(options) {
     // 页面初始化 options为页面跳转所带来的参数
@@ -22,19 +23,53 @@ Page({
   },
   getOrderList() {
     let that = this;
-    util.request(api.OrderList, {
-      showType: that.data.showType,
-      page: that.data.page,
-      size: that.data.size
-    }).then(function(res) {
-      if (res.errno === 0) {
-        console.log(res.data);
-        that.setData({
-          orderList: that.data.orderList.concat(res.data.data),
-          totalPages: res.data.totalPages
-        });
+    wx.request({
+      // 注意，如果小程序开启校验合法域名时必须使用https协议
+      //在测试的情况下可以不开启域名校验
+      url: 'http://624w0n2786.yicp.fun//order',
+      data: {
+        // 接口设置的固定参数值
+        customerId: '1',
+      },
+      // 请求的方法
+      method: 'GET',
+      // 设置请求头，不能设置 Referer
+      header: {
+    		'Authorization': '123456' // 默认值
+  	  },
+  	  // 请求成功时的处理
+      success: function (res) {
+        // 一般在这一打印下看看是否拿到数据
+        console.log(res.data)
+        if (res.statusCode == 200) {
+          that.setData({
+            // 将res.data保存在listDate方便我们去循环遍历
+            orderList: res.data,            
+          })
+        }
+      },
+      // 请求失败时的一些处理
+      fail: function () {
+      	wx.showToast({
+            icon: "none",
+            mask: true,
+          	title: "接口调用失败，请稍后再试。",
+         });
       }
-    });
+    })
+    // util.request(api.OrderList, {
+    //   showType: that.data.showType,
+    //   page: that.data.page,
+    //   size: that.data.size
+    // }).then(function(res) {
+    //   if (res.errno === 0) {
+    //     console.log(res.data);
+    //     that.setData({
+    //       orderList: that.data.orderList.concat(res.data.data),
+    //       totalPages: res.data.totalPages
+    //     });
+    //   }
+    // });
   },
   onReachBottom() {
     if (this.data.totalPages > this.data.page) {
