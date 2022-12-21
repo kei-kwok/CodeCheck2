@@ -12,7 +12,7 @@
   <swiper class="banner" indicator-dots="true" autoplay="true" interval="3000" duration="1000">
     <swiper-item wx:for="{{banner}}" wx:key="id">
       <!-- <navigator url="{{item.link}}"> -->
-      <image src="{{item.url}}" background-size="cover"></image>
+      <image src="{{item.data}}" background-size="cover"></image>
       <!-- </navigator> -->
     </swiper-item>
   </swiper>
@@ -37,23 +37,24 @@
       <!-- <template> -->
     <!-- <view class="Index"> -->
         <!-- 瀑布流布局列表 -->
+        <navigator url="/pages/business/business">
         <view class="pubuBox">
             <view class="pubuItem">
-                <view class="item-masonry" wx:for="{{comList}}" wx:key="index">
-                    <image src="{{item.img}}" mode="widthFix"></image>
+                <view class="item-masonry" wx:for="{{comList}}" wx:for-item="item" wx:for-index="index" wx:key="index">
+                    <image src="{{item.image}}" mode="widthFix"></image>
                     <view class="listtitle"> <!-- 这是没有高度的父盒子（下半部分） -->
-                        <view class="listtitle1">{{ item.name }}</view>
+                        <view class="listtitle1">{{ item.description }}</view>
                         <view class="listtitle2">
-                            <text class="listtitle2son">￥</text>
-                            {{ item.commdityPrice }}
+                            {{ item.name }}
                         </view>
                         <view class="listtitle3">
-                            xxx旗舰店
+                          {{ item.address }}
                         </view>
                     </view>
                 </view>
             </view>
         </view>
+      </navigator>
     <!-- </view> -->
 <!-- </template> -->
   </view>

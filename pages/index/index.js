@@ -8,30 +8,6 @@ const app = getApp();
 Page({
   onShow() {},
   data: {
-    item:{
-    },
-    msg1:'1',
-    noramalData: [
-    {
-      index:"0",
-      tuijian:"",
-      cover:"//tse3-mm.cn.bing.net/th/id/OIP-C.e4LeYaIf0ol6CacP9ZwQagHaLG?w=203&h=304&c=7&r=0&o=5&dpr=1.3&pid=1.7",
-      title:"美食",
-      tx:"//tse3-mm.cn.bing.net/th/id/OIP-C.e4LeYaIf0ol6CacP9ZwQagHaLG?w=203&h=304&c=7&r=0&o=5&dpr=1.3&pid=1.7",
-      name:"美食",
-      love:"111",
-      num:"111",
-    },
-    {
-      index:"1",
-      cover:"//tse3-mm.cn.bing.net/th/id/OIP-C.e4LeYaIf0ol6CacP9ZwQagHaLG?w=203&h=304&c=7&r=0&o=5&dpr=1.3&pid=1.7",
-      title:"美食",
-      tx:"//tse3-mm.cn.bing.net/th/id/OIP-C.e4LeYaIf0ol6CacP9ZwQagHaLG?w=203&h=304&c=7&r=0&o=5&dpr=1.3&pid=1.7",
-      name:"美食",
-      love:"111",
-      num:"111",
-    },
-    ],
     // 轮播图
     banner: [ 
       {url:"//tse4-mm.cn.bing.net/th/id/OIP-C.WCqeGtPisiaW77NrCdANbgHaE8?w=298&h=197&c=7&r=0&o=5&dpr=1.3&pid=1.7"},
@@ -41,6 +17,7 @@ Page({
       //   id:"106383857430822913"
       // }
     ],
+    // 分类
     channel: [
       {
         id:"clothes",
@@ -73,40 +50,110 @@ Page({
         iconUrl:"https://tse2-mm.cn.bing.net/th/id/OIP-C.7tl8xXNvneFqZjmwX8bIjwHaE8?w=298&h=199&c=7&r=0&o=5&dpr=1.3&pid=1.7",
       },
     ],
-    comList: [{
-      img: "https://tse3-mm.cn.bing.net/th/id/OIP-C.sz0z2jR--3aelpZ5g42htwHaLH?w=115&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7",
-      name: '商品的名称，可以很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长',
-      commdityPrice: 100
+    // 商家推荐
+    comList: [
+      {
+      image: "https://tse1-mm.cn.bing.net/th/id/OIP-C.hvckeJoHe-jd_f92gVF3jgHaEo?w=314&h=196&c=7&r=0&o=5&dpr=1.3&pid=1.7",
+      description: '商品的名称，可以很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长',
+      address:"龙泉驿区",
+      name:'佳客堡'
   }, {
-      img: 'http://pic.sc.chinaz.com/Files/pic/pic9/202002/zzpic23327_s.jpg',
-      name: '商品名称会在超出两行时候自动折叠',
-      commdityPrice: 100
+    image: "https://tse4-mm.cn.bing.net/th/id/OIP-C.sz0z2jR--3aelpZ5g42htwHaLH?w=115&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7",
+    description: '商品的名称，可以很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长',
+    address:"龙泉驿区",
+    name:'佳客堡'
   },
   {
-      img: 'http://pic1.sc.chinaz.com/Files/pic/pic9/202002/zzpic23343_s.jpg',
-      name: '只有一行标题时高度为39',
-      commdityPrice: 100
+    image: "https://tse3-mm.cn.bing.net/th/id/OIP-C.sz0z2jR--3aelpZ5g42htwHaLH?w=115&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7",
+    description: '商品的名称，可以很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长',
+    address:"龙泉驿区",
+    name:'佳客堡'
   }, {
-      img: 'http://pic1.sc.chinaz.com/Files/pic/pic9/202002/zzpic23343_s.jpg',
-      name: '具体样式您可以自定义',
-      commdityPrice: 100
+    image: "https://tse3-mm.cn.bing.net/th/id/OIP-C.sz0z2jR--3aelpZ5g42htwHaLH?w=115&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7",
+    description: '商品的名称，可以很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长',
+    address:"龙泉驿区",
+    name:'佳客堡'
   }, {
-      img: 'http://pic2.sc.chinaz.com/Files/pic/pic9/202002/hpic2119_s.jpg',
-      name: 'vue的H5页面也是如此使用',
-      commdityPrice: 100
+    image: "https://tse3-mm.cn.bing.net/th/id/OIP-C.sz0z2jR--3aelpZ5g42htwHaLH?w=115&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7",
+    description: '商品的名称，可以很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长',
+    address:"龙泉驿区",
+    name:'佳客堡'
   }
 ], //商品列表
     indicatorDots: false,
     window: false,
-    colseCoupon:false
+    colseCoupon:false,
+    page: 1,
+    // id: '106383857430822913',
   },
+  // 获取商家推荐数据
+  getComList: function(){
+    let that = this;
+
+    wx.request({
+      url: 'https://624w0n2786.yicp.fun/main',
+      data: {
+        // 接口设置的固定参数值
+          page: that.data.page,
+          id: that.data.id,
+          name: that.data.name,
+          address: that.data.address,
+          description: that.data.description,
+          image: that.data.swipers.image
+      },
+      // 请求的方法
+      method: 'GET', // 或 ‘POST’
+  	  // 请求成功时的处理
+      success: function (res) {
+        // 打印下看看是否拿到数据
+        console.log(res.data)
+        if (res.statusCode == 200) {
+          that.setData({
+            comList: res.data,
+          })
+        }
+      },
+      // 请求失败时的一些处理
+      fail: function () {
+      	wx.showToast({
+            icon: "none",
+            mask: true,
+          	title: "网络连接失败，请稍后再试。",
+         });
+      }
+    }) 
+  },
+    // util.request(api.ComList, {
+    //   page: that.data.page,
+    //   id: that.data.id,
+    //   name: that.data.name,
+    //   address: that.data.address,
+    //   description: that.data.description,
+    //   image: that.data.swipers.image
+    // })
+    // .then(function(res) {
+    //   if (res.errno === 0) {
+    //     that.setData({
+    //       comList: res.data,
+    //     });
+    //   }
+    // });
+
+ 
+  // getComList(){
+  //   util.request({ url: 'https://624w0n2786.yicp.fun/main' })
+  //   .then(result => {
+  //     this.setData({
+  //       comList: result.data.swipers.image
+  //     })
+  //   })
+  // },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
   // onReady: function () {
     
   // },
-
   onShareAppMessage: function() {
     let userInfo = wx.getStorageSync('userInfo');
     let shareUserId = 1;
@@ -146,16 +193,28 @@ Page({
     });
   },
   onLoad: function(options) {
+    this.getComList();
     this.setData({
       colseCoupon: false
     });
-    // 1.发送异步请求获取轮播图数据
-    // wx.request({
-    //   url: 'https://624w0n2786.yicp.fun/main/swiper',
-    //   success: (result) => {
-    //     console.log(result);
-    //   }
-    // })
+    var id = '106383857430822913';
+    var that = this;
+    // 发送异步请求获取轮播图数据
+    wx.request({
+      url: 'https://624w0n2786.yicp.fun/main/swiper',
+      data:{
+        id: "106383857430822913",
+        page: 1
+      },
+      // id: "106383857430822913",
+      success:function(res) {
+        console.log(res.data);
+        banner:res.data;
+        that.setData({
+            index : banner
+        })
+      }
+    })
     //如果有分享用户，则设置
     if (options.shareUserId){
       wx.setStorageSync('shareUserId', options.shareUserId);
