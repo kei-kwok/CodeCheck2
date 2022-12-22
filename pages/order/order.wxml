@@ -1,0 +1,108 @@
+<view class="page">
+	<view class="header-input" style="background:#efefef;height:40rpx;">
+		<!-- 搜索条 -->
+		<view class="search-input" style="background-color: white;" bindtap="searchNav">
+			<icon size='15' type='search'></icon>
+			<view style="padding-top:10rpx;">
+				<text class='search-key'>搜索商品</text>
+			</view>
+		</view>
+	</view>
+	<view class="body">
+		<!-- 左侧滚动栏 -->
+		<view style='float: left' class='left'>
+			<scroll-view scroll-y scroll-with-animation scroll-left="{{scrollLength}}" class='scrollY'
+				style='height: {{winHeight}}px'>
+				<view class='all clear'>
+					<block wx:key="tabs" wx:for="{{tabs}}">
+						<view bindtap='jumpIndex' data-menuindex='{{index}}' data-ft_id='{{item.ft_id}}'>
+							<view class="text-style {{indexId==index?' activeView':''}}">
+								<text class="{{indexId==index?'active1':''}}">{{item.ft_name}}</text>
+							</view>
+						</view>
+					</block>
+				</view>
+			</scroll-view>
+		</view>
+		<view class="right" style='height: {{winHeight}}rpx;width:calc(100% - 200rpx);'>
+			<scroll-view scroll-y scroll-with-animation scroll-left="{{scrollLength}}" bindscroll="scrollToLeft"
+				scroll-into-view="{{toTitle}}" class='scrollRight' style='height: {{winHeight}}px'>
+				<block wx:key="tabs" wx:for="{{tabs}}" wx:for-item="itemft">
+					<view id="view-{{itemft.ft_id}}">
+						<view class="title" id="title-{{itemft.ft_id}}">{{itemft.ft_name}}</view>
+						<view class="orders" wx:for="{{tabsList}}" wx:for-item="itemf">
+							<view wx:if="{{itemf.ft_id==itemft.ft_id}}"
+								style="height:180rpx;border-bottom:1rpx solid #F0F0F0;width:96%;margin:20rpx auto;">
+								<image src="{{itemf.food_Img}}" bindtap="toDetail" data-id="{{itemf.f_Cooks_Id}}"
+									data-ft_id="{{itemf.ft_id}}" style="width:160rpx;height:160rpx;float:left;"></image>
+								<view style="width:calc(100% - 180rpx);float:right;height:160rpx;">
+									<view
+										style="height:40rpx;line-height:40rpx;margin-top:5rpx;overflow: hidden;white-space: nowrap;text-overflow: ellipsis;">
+										{{itemf.f_Name}}</view>
+									<view
+										style="height:40rpx;line-height:40rpx;margin-top:15rpx;font-size:24rpx;color:#c2c2c2;overflow: hidden;white-space: nowrap;text-overflow: ellipsis;">
+										{{itemf.f_Description}}</view>
+									<view style="height:40rpx;line-height:40rpx;margin-top:15rpx;">
+										<text style="color:red;">￥{{itemf.f_DPrice}}</text>
+										<text
+											style="color:#c2c2c2;font-size:24rpx;margin-left:10rpx;text-decoration:line-through;">￥{{itemf.f_Price}}</text>
+										<!-- 加号 -->
+										<image src="../../../images/add.png" data-id="{{itemf.f_Cooks_Id}}" bindtap="addCart"
+											style="float:right;height:40rpx;width:40rpx;"></image>
+										<!-- 数量 -->
+										<text style="float:right;height:40rpx;padding:0rpx 10rpx;" class="value"
+											hidden="{{itemf.quantity<=0}}" data-id="{{itemf.f_Cooks_Id}}"
+											data-num="{{itemf.quantity}}">{{itemf.quantity}}</text>
+										<!-- 减号 -->
+										<image src="../../../images/reduce.png" hidden="{{itemf.quantity<=0}}"
+											data-id="{{itemf.f_Cooks_Id}}" bindtap="delCart" style="float:right;height:40rpx;width:40rpx;">
+										</image>
+									</view>
+								</view>
+							</view>
+						</view>
+					</view>
+				</block>
+			</scroll-view>
+		</view>
+	</view>
+	<!-- 底部下单 -->
+	<view class="bottom_box">
+		<view class="shop_cartBox" bindtap="cascadeToggle">
+			<image class="shopCart_img" src="../../../images/shopCart.png"></image>
+		</view>
+		<view class="all_money">总计：{{totalPrice}}元，{{totalNum}}件</view>
+		<view class="choose_ok color-block" bindtap="gotoOrder">下单</view>
+	</view>
+	<!--购物车弹窗  -->
+	<view hidden="{{maskFlag}}" class="modal-mask" bindtap="cascadeToggle"></view>
+	<view animation="{{animationData}}" class="cart_popup">
+		<view class="shopcart_title"><span class="shopcart_close" bindtap="cascadeToggle">返回</span>购物车<span
+				class="shopcart_deleteAll" bindtap="cleanList">清空购物车</span></view>
+		<scroll-view scroll-y style="height:250px;margin-top:35px">
+			<block wx:for="{{cartList}}" wx:key="">
+				<view class="cart_cells" wx:if="{{item.quantity > 0}}">
+					<view class="cells_name"
+						style="font-size:28rpx;color:gray;overflow: hidden;white-space: nowrap;text-overflow: ellipsis;"
+						data-index="{{index}}">{{item.f_Name}}</view>
+					<view class="cells_price" data-index="{{index}}">{{item.f_DPrice}}</view>
+					<view class="price-box">
+						<!-- 减号 -->
+						<image src="../../../images/reduce.png" hidden="{{item.quantity<=0}}" data-id="{{item.f_Cooks_Id}}"
+							bindtap="delCart" style="float:right;height:40rpx;width:40rpx;margin-top: 10rpx;"></image>
+						<!-- 数量 -->
+						<text style="float:right;height:40rpx;padding:0rpx 10rpx;margin-top: 10rpx;" class="value"
+							hidden="{{item.quantity<=0}}" data-id="{{item.f_Cooks_Id}}"
+							data-num="{{item.quantity}}">{{item.quantity}}</text>
+						<!-- 加号 -->
+						<image src="../../../images/add.png" data-id="{{item.f_Cooks_Id}}" bindtap="addCart"
+							style="float:right;height:40rpx;width:40rpx;margin-top: 10rpx;"></image>
+					</view>
+					<icon class="shopcart_delete" type="clear" size="18" data-index="{{index}}" data-id="{{item.f_Cooks_Id}}"
+						bindtap="deleteOne" />
+				</view>
+			</block>
+		</scroll-view>
+	</view>
+</view>
+

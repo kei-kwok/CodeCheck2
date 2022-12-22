@@ -17,8 +17,12 @@
   </view>
   </view>
 <!-- 简介 -->
-  <view>
-    <text>店铺简介</text>
-    <text>简介简介简介简介简介简介简介简介简介</text>
+  <view class="main">
+    <text class="main-txt">店铺简介</text>
+    <text class="main-txt-1">简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介</text>
   </view>
+<!-- button -->
+  <navigator url="/pages/order/order">
+    <button class="btn">快看菜单 今天吃什么</button>
+  </navigator>
 </view>
