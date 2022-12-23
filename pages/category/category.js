@@ -91,21 +91,21 @@ Page({
   onHide: function() {
     // 页面隐藏
   },
-  getGoodsList: function() {
-    var that = this;
+  // getGoodsList: function() {
+  //   var that = this;
 
-    util.request(api.GoodsList, {
-        categoryId: that.data.id,
-        page: that.data.page,
-        size: that.data.size
-      })
-      .then(function(res) {
-        that.setData({
-          goodsList: that.data.goodsList.concat(res.data.goodsList),
-          totalPages: res.data.totalPages
-        });
-      });
-  },
+  //   util.request(api.GoodsList, {
+  //       categoryId: that.data.id,
+  //       page: that.data.page,
+  //       size: that.data.size
+  //     })
+  //     .then(function(res) {
+  //       that.setData({
+  //         goodsList: that.data.goodsList.concat(res.data.goodsList),
+  //         totalPages: res.data.totalPages
+  //       });
+  //     });
+  // },
   onUnload: function() {
     // 页面关闭
   },

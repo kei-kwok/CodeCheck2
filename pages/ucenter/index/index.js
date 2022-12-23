@@ -17,15 +17,15 @@ Page({
         unrecv: 0,
         uncomment: 0
       },
-    MyMenus: [
-      { url: "/pages/ucenter/collect/collect", pic:"icon_collect.png",name:"店铺收藏"},
-      { url: "/pages/ucenter/footprint/footprint", pic: "footprint.png", name: "浏览历史" },
-      // { url: "/pages/groupon/myGroupon/myGroupon", pic: "group.png", name: "我的拼团" },
-      { url: "/pages/ucenter/address/address", pic: "address.png", name: "地址设置" },
-      // { url: "/pages/ucenter/feedback/feedback", pic: "feedback.png", name: "意见反馈" },
-      // { url: "/pages/about/about", pic: "about_us.png", name: "关于我们" }
-      // *,{ url: "/pages/about/about", pic: "comment.png", name: "使用帮助" }
-      ],
+    // MyMenus: [
+    //   { url: "/pages/ucenter/collect/collect", pic:"icon_collect.png",name:"店铺收藏"},
+    //   { url: "/pages/ucenter/footprint/footprint", pic: "footprint.png", name: "浏览历史" },
+    //   // { url: "/pages/groupon/myGroupon/myGroupon", pic: "group.png", name: "我的拼团" },
+    //   { url: "/pages/ucenter/address/address", pic: "address.png", name: "地址设置" },
+    //   // { url: "/pages/ucenter/feedback/feedback", pic: "feedback.png", name: "意见反馈" },
+    //   // { url: "/pages/about/about", pic: "about_us.png", name: "关于我们" }
+    //   // *,{ url: "/pages/about/about", pic: "comment.png", name: "使用帮助" }
+    //   ],
       hasLogin: false,
       totalAmount: 0.00
   },
@@ -33,18 +33,38 @@ Page({
   /**
    * 页面跳转
   */
-  goPages:function(e){
-    console.log();
-    if (this.data.hasLogin) {
-      wx.navigateTo({
-        url: e.currentTarget.dataset.url
-      });
-    } else {
-      wx.navigateTo({
-        url: "/pages/auth/login/login"
-      });
-    };
-  },
+ goPages: function (options) {
+  wx.navigateTo({
+        url:"/pages/ucenter/collect/collect",//要跳转到的页面路径
+})  
+},
+goPage: function(options){
+  wx.navigateTo({
+    url:"/pages/ucenter/couponList/couponList"//要跳转到的页面路径
+})   
+},
+goHstory:function(options){
+  wx.navigateTo({
+    url:"/pages/ucenter/footprint/footprint"//要跳转到的页面路径
+})   
+},
+goChange:function(options){
+  wx.navigateTo({
+    url:"/pages/ucenter/address/address"//要跳转到的页面路径
+})   
+},
+  // goPages:function(e){
+  //   console.log();
+  //   if (this.data.hasLogin) {
+  //     wx.navigateTo({
+  //       url: e.currentTarget.dataset.url
+  //     });
+  //   } else {
+  //     wx.navigateTo({
+  //       url: "/pages/auth/login/login"
+  //     });
+  //   };
+  // },
 
   /**
    * 生命周期函数--监听页面加载
@@ -65,28 +85,28 @@ Page({
   onUnload: function () {
     
   },
-  onShow:function(){
-    //获取用户的登录信息
-    if (app.globalData.hasLogin) {
-      let userInfo = wx.getStorageSync('userInfo');
-      this.setData({
-        userInfo: userInfo,
-        hasLogin: true
-      });
+  // onShow:function(){
+  //   //获取用户的登录信息
+  //   if (app.globalData.hasLogin) {
+  //     let userInfo = wx.getStorageSync('userInfo');
+  //     this.setData({
+  //       userInfo: userInfo,
+  //       hasLogin: true
+  //     });
 
-      let that = this;
-      util.request(api.UserIndex).then(function (res) {
-        if (res.errno === 0) {
-          that.setData({
-            order: res.data.order,
-            totalAmount: res.data.totalAmount,
-            remainAmount: res.data.remainAmount,
-            couponCount: res.data.couponCount
-          });
-        }
-      });
-    }
-  },
+  //     let that = this;
+  //     util.request(api.UserIndex).then(function (res) {
+  //       if (res.errno === 0) {
+  //         that.setData({
+  //           order: res.data.order,
+  //           totalAmount: res.data.totalAmount,
+  //           remainAmount: res.data.remainAmount,
+  //           couponCount: res.data.couponCount
+  //         });
+  //       }
+  //     });
+  //   }
+  // },
 
   /**
   * 生命周期函数--监听页面卸载
@@ -113,20 +133,20 @@ Page({
     };
   },
   goOrder() {
-    if (this.data.hasLogin) {
-      try {
-        wx.setStorageSync('tab', '0');
-      } catch (e) {
+    // if (this.data.hasLogin) {
+    //   try {
+    //     wx.setStorageSync('tab', '0');
+    //   } catch (e) {
 
-      }
+    //   }
       wx.navigateTo({
         url: "/pages/ucenter/order/order"
       });
-    } else {
-      wx.navigateTo({
-        url: "/pages/auth/login/login"
-      });
-    }
+    // } else {
+    //   wx.navigateTo({
+    //     url: "/pages/auth/login/login"
+    //   });
+    // }
   },
   goOrderIndex(e) {
     if (this.data.hasLogin) {

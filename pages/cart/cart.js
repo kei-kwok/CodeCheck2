@@ -15,10 +15,10 @@ Page({
       "checkedGoodsCount": 0,
       "checkedGoodsAmount": 0.00
     },
-    isEditCart: false,
-    checkedAllStatus: true,
+    isEditCart: true,
+    checkedAllStatus: false,
     editCartList: [],
-    hasLogin: false
+    hasLogin: true,
   },
   onLoad: function(options) {
     // 页面初始化 options为页面跳转所带来的参数
@@ -33,7 +33,7 @@ Page({
     wx.stopPullDownRefresh() //停止下拉刷新
   },
   onShow: function() {
-    // 页面显示
+    页面显示
     if (app.globalData.hasLogin) {
       this.getCartList();
     }

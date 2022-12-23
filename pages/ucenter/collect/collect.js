@@ -1,7 +1,7 @@
 var util = require('../../../utils/util.js');
 var api = require('../../../config/api.js');
 
-var app = getApp();
+// var app = getApp();
 
 Page({
   data: {
@@ -12,9 +12,9 @@ Page({
     totalPages: 1
   },
   getCollectList() {
-    wx.showLoading({
-      title: '加载中...',
-    });
+    // wx.showLoading({
+    //   title: '加载中...',
+    // });
     let that = this;
     util.request(api.CollectList, {
       type: that.data.type,
