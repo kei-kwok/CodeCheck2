@@ -36,11 +36,11 @@
     <!-- 瀑布流布局 -->
       <!-- <template> -->
     <!-- <view class="Index"> -->
-        <!-- 瀑布流布局列表 -->
-        <navigator url="/pages/business/business">
-        <view class="pubuBox">
-            <view class="pubuItem">
-                <view class="item-masonry" wx:for="{{comList}}" wx:for-item="item" wx:for-index="index" wx:key="index">
+        <!-- 瀑布流布局列表 -->    
+        <view class="pubuBox">   
+            <view class="pubuItem">    
+                <view class="item-masonry" wx:for="{{comList}}" wx:for-item="item" wx:for-index="index" wx:key="index"> 
+                <navigator url="/pages/business/business">
                     <image src="{{item.image}}" mode="widthFix"></image>
                     <view class="listtitle"> <!-- 这是没有高度的父盒子（下半部分） -->
                         <view class="listtitle1">{{ item.description }}</view>
@@ -51,10 +51,10 @@
                           {{ item.address }}
                         </view>
                     </view>
-                </view>
-            </view>
-        </view>
-      </navigator>
+                    </navigator>
+                </view>                     
+            </view>       
+        </view>      
     <!-- </view> -->
 <!-- </template> -->
   </view>

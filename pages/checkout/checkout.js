@@ -10,19 +10,13 @@ Page({
     brandCartgoods:[],
     checkedGoodsList: [],
     checkedAddress: {},
-    availableCouponLength: 0, // 可用的优惠券数量
     goodsTotalPrice: 0.00, //商品总价
-    freightPrice: 0.00, //快递费
-    couponPrice: 0.00, //优惠券的价格
-    grouponPrice: 0.00, //团购优惠价格
     orderTotalPrice: 0.00, //订单总价
     actualPrice: 0.00, //实际需要支付的总价
     cartId: 0,
     addressId: 0,
     couponId: 0,
     message: '',
-    grouponLinkId: 0, //参与的团购，如果是发起则为0
-    grouponRulesId: 0 //团购规则ID
   },
   onLoad: function(options) {
     // 页面初始化 options为页面跳转所带来的参数
@@ -86,9 +80,9 @@ Page({
   },
   onShow: function() {
     // 页面显示
-    wx.showLoading({
-      title: '加载中...',
-    });
+    // wx.showLoading({
+    //   title: '加载中...',
+    // });
     try {
       var cartId = wx.getStorageSync('cartId');
       if (cartId) {

@@ -1,13 +1,11 @@
 <view class="page">
-	<view class="header-input" style="background:#efefef;height:40rpx;">
-		<!-- 搜索条 -->
-		<view class="search-input" style="background-color: white;" bindtap="searchNav">
-			<icon size='15' type='search'></icon>
-			<view style="padding-top:10rpx;">
-				<text class='search-key'>搜索商品</text>
-			</view>
-		</view>
-	</view>
+<!-- 搜索条 -->
+<view class="search">
+    <navigator url="/pages/search/search" class="input jhx_bg1">
+      <image class="icon"></image>
+      <text class="txt jhx_f1">商品搜索</text>
+    </navigator>
+  </view>
 	<view class="body">
 		<!-- 左侧滚动栏 -->
 		<view style='float: left' class='left'>
@@ -47,14 +45,14 @@
 										<text
 											style="color:#c2c2c2;font-size:24rpx;margin-left:10rpx;text-decoration:line-through;">￥{{itemf.f_Price}}</text>
 										<!-- 加号 -->
-										<image src="../../../images/add.png" data-id="{{itemf.f_Cooks_Id}}" bindtap="addCart"
+										<image src="../../static/images/add.png" data-id="{{itemf.f_Cooks_Id}}" bindtap="addCart"
 											style="float:right;height:40rpx;width:40rpx;"></image>
 										<!-- 数量 -->
 										<text style="float:right;height:40rpx;padding:0rpx 10rpx;" class="value"
 											hidden="{{itemf.quantity<=0}}" data-id="{{itemf.f_Cooks_Id}}"
 											data-num="{{itemf.quantity}}">{{itemf.quantity}}</text>
 										<!-- 减号 -->
-										<image src="../../../images/reduce.png" hidden="{{itemf.quantity<=0}}"
+										<image src="../../static/images/reduce.png" hidden="{{itemf.quantity<=0}}"
 											data-id="{{itemf.f_Cooks_Id}}" bindtap="delCart" style="float:right;height:40rpx;width:40rpx;">
 										</image>
 									</view>
@@ -69,7 +67,7 @@
 	<!-- 底部下单 -->
 	<view class="bottom_box">
 		<view class="shop_cartBox" bindtap="cascadeToggle">
-			<image class="shopCart_img" src="../../../images/shopCart.png"></image>
+			<image class="shopCart_img" src="../../static/images/cart.png"></image>
 		</view>
 		<view class="all_money">总计：{{totalPrice}}元，{{totalNum}}件</view>
 		<view class="choose_ok color-block" bindtap="gotoOrder">下单</view>
@@ -88,14 +86,14 @@
 					<view class="cells_price" data-index="{{index}}">{{item.f_DPrice}}</view>
 					<view class="price-box">
 						<!-- 减号 -->
-						<image src="../../../images/reduce.png" hidden="{{item.quantity<=0}}" data-id="{{item.f_Cooks_Id}}"
+						<image src="../../static/images/reduce.png" hidden="{{item.quantity<=0}}" data-id="{{item.f_Cooks_Id}}"
 							bindtap="delCart" style="float:right;height:40rpx;width:40rpx;margin-top: 10rpx;"></image>
 						<!-- 数量 -->
 						<text style="float:right;height:40rpx;padding:0rpx 10rpx;margin-top: 10rpx;" class="value"
 							hidden="{{item.quantity<=0}}" data-id="{{item.f_Cooks_Id}}"
 							data-num="{{item.quantity}}">{{item.quantity}}</text>
 						<!-- 加号 -->
-						<image src="../../../images/add.png" data-id="{{item.f_Cooks_Id}}" bindtap="addCart"
+						<image src="../../static/images/add.png" data-id="{{item.f_Cooks_Id}}" bindtap="addCart"
 							style="float:right;height:40rpx;width:40rpx;margin-top: 10rpx;"></image>
 					</view>
 					<icon class="shopcart_delete" type="clear" size="18" data-index="{{index}}" data-id="{{item.f_Cooks_Id}}"

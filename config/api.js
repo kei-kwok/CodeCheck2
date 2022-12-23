@@ -8,7 +8,9 @@
  
  module.exports = {
    IndexUrl: WxApiRoot + 'home/index', //首页数据接口
-   ComList: WxApiRoot + '/main', //首页商家推荐接口
+   ComList: WxApiRoot + 'main', //首页商家推荐接口
+
+
    CatalogList: WxApiRoot + 'catalog/index', //分类目录全部分类数据接口
    CatalogCurrent: WxApiRoot + 'catalog/current', //分类目录当前分类数据接口
  
@@ -28,9 +30,6 @@
  
    CreateShareImg: WxApiRoot + 'agency/createShareImg', //创建分享海报
  
-   BrandList: WxApiRoot + 'brand/list', //品牌列表
-   BrandDetail: WxApiRoot + 'brand/detail', //品牌详情
- 
    CartList: WxApiRoot + 'cart/index', //获取购物车的数据
    CartAdd: WxApiRoot + 'cart/add', // 添加商品到购物车
    CartFastAdd: WxApiRoot + 'cart/fastadd', // 立即购买商品
@@ -47,29 +46,15 @@
    CommentCount: WxApiRoot + 'comment/count', //评论总数
    CommentPost: WxApiRoot + 'comment/post', //发表评论
  
-   TopicList: WxApiRoot + 'topic/list', //专题列表
-   TopicDetail: WxApiRoot + 'topic/detail', //专题详情
-   TopicRelated: WxApiRoot + 'topic/related', //相关专题
- 
-   SearchIndex: WxApiRoot + 'search/index', //搜索关键字
+   SearchIndex: WxApiRoot + 'main/search', //搜索关键字
    SearchResult: WxApiRoot + 'search/result', //搜索结果
    SearchHelper: WxApiRoot + 'search/helper', //搜索帮助
-   SearchClearHistory: WxApiRoot + 'search/clearhistory', //搜索历史清楚
- 
-   AddressList: WxApiRoot + 'address/list', //收货地址列表
-   AddressDetail: WxApiRoot + 'address/detail', //收货地址详情
-   AddressSave: WxApiRoot + 'address/save', //保存收货地址
-   AddressDelete: WxApiRoot + 'address/delete', //保存收货地址
- 
-   ExpressQuery: WxApiRoot + 'express/query', //物流查询
- 
-   RegionList: WxApiRoot + 'region/list', //获取区域列表
+   SearchClearHistory: WxApiRoot + 'search/clearhistory', //搜索历史清除
  
    OrderSubmit: WxApiRoot + 'order/submit', // 提交订单
    OrderPrepay: WxApiRoot + 'order/prepay', // 订单的预支付会话
    OrderList: WxApiRoot + 'order/list', //订单列表
    OrderDetail: WxApiRoot + 'order/detail', //订单详情
-   ExpressTrace: WxApiRoot + 'order/expressTrace', //订单物流
    OrderCancel: WxApiRoot + 'order/cancel', //取消订单
    OrderRefund: WxApiRoot + 'order/refund', //退款取消订单
    OrderDelete: WxApiRoot + 'order/delete', //删除订单
@@ -83,28 +68,8 @@
  
    UserFormIdCreate: WxApiRoot + 'formid/create', //用户FromId，用于发送模版消息
  
-   GroupOnList: WxApiRoot + 'groupon/list', //团购列表
-   GroupOn: WxApiRoot + 'groupon/query', //团购API-查询
-   GroupOnMy: WxApiRoot + 'groupon/my', //团购API-我的团购
-   GroupOnDetail: WxApiRoot + 'groupon/detail', //团购API-详情
-   GroupOnJoin: WxApiRoot + 'groupon/join', //团购API-详情
- 
-   CouponList: WxApiRoot + 'coupon/list', //优惠券列表
-   CouponMyList: WxApiRoot + 'coupon/mylist', //我的优惠券列表
-   CouponSelectList: WxApiRoot + 'coupon/selectlist', //当前订单可用优惠券列表
-   CouponReceive: WxApiRoot + 'coupon/receive', //优惠券领取
-   CouponReceiveAll: WxApiRoot + 'coupon/receiveAll', //优惠券领取
-   CouponExchange: WxApiRoot + 'coupon/exchange', //优惠券兑换
-   GetUserCoupon: WxApiRoot + 'coupon/getUserCoupon',//用户个人可领取优惠券查询
- 
    StorageUpload: WxApiRoot + 'storage/upload', //图片上传,
  
    UserIndex: WxApiRoot + 'user/index', //个人页面用户相关信息
-   BrokerageMain: WxApiRoot + 'brokerage/main',//佣金收益主页面
-   SettleOrderList: WxApiRoot + 'brokerage/settleOrderList',//佣金收益主页面
-   ApplyWithdrawal: WxApiRoot + 'brokerage/applyWithdrawal',//佣金提现申请
-   ExtractList: WxApiRoot + 'brokerage/extractList',//佣金账号提现记录
-   ArticleDetail: WxApiRoot + 'article/detail',//公告详情
-   ApplyAgency: WxApiRoot + 'user/applyAgency',//代理申请
    GetSharedUrl: WxApiRoot + 'user/getSharedUrl' //获取推广二维码
  };

@@ -1,13 +1,46 @@
-/* pages/catering.wxss /
-.page {
+/* pages/catering.wxss / */
+/* .page {
 display: flex;
 flex-direction: column;
 width: 100%;
-/ background: #F7F4F8; /
+ background: #F7F4F8; 
 background-image: linear-gradient(90deg, #FCFCFC 0%, #FCFCFC 99%);
-/ padding-top: 16px; */
-/* } */
+ padding-top: 16px;
+} */
+/* 搜索 */
+.search {
+  height: 100rpx;
+  width: 100%;
+  padding: 0 30rpx;
+  background: #fff;
+  display: flex;
+  align-items: center;
+}
 
+.search .input {
+  width: 690rpx;
+  height: 70rpx;
+  border-radius: 40rpx;
+  display: flex;
+  padding-top: 18rpx;
+  padding-left: 20rpx;
+  align-items: left;
+  vertical-align: middle;
+  justify-content: left;
+}
+
+.search .icon {
+  background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABwAAAAcCAMAAABF0y+mAAAABGdBTUEAALGPC/xhBQAAAAFzUkdCAK7OHOkAAAA8UExURUdwTGZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZjQWelcAAAATdFJOUwDUDlMW8DUFcdHpnc3cSLkosSd78uTdAAAAvUlEQVQoz4WS6QLDEBCE131L0nn/d23J0VCV+bP4LLsM0S6Tg1NQLmRDnYz1OOVti18OcFZLI7Utw/XGtEIS10wkKH3NVoWF3/byBerMNQ5be4vZ4I4Vi8S7+niC3bd55L54yvA1VSDSryJqheE4oZVFKMFBD6AGK0FBDiCHKgEwA/hZfsxkszun1U77nL7Q9G3nvzL6z1sH2ndOANi3eRmrhzjx6qGo2Z327pMNJSMO34paSkc7PdJI/2lc3naRCwMB9sl5AAAAAElFTkSuQmCC') center no-repeat;
+  background-size: 100%;
+  width: 34rpx;
+  height: 34rpx;
+}
+
+.search .txt {
+  height: 42rpx;
+  line-height: 42rpx;
+  padding-left: 10rpx;
+}
 .under_line {
 width: 100%;
 border-top: 1rpx solid #efefef;
@@ -25,14 +58,14 @@ display: flex;
 width: 100%;
 }
 
-.scrollY {
+/* .scrollY {
 width: 200rpx;
-/* position: fixed;
+position: fixed;
 left: 0;
-top: 0; /
+top: 0; 
 background: #F5F5F5;
-/ border-right: 1rpx solid #efefef; */
-}
+ border-right: 1rpx solid #efefef;
+} */
 
 /* scrollRight{
 flex: 1;
@@ -98,7 +131,7 @@ background-color: #fff;
 .shop_cartBox {
 width: 100rpx;
 height: 100rpx;
-background-color: #FB4C22;
+background-color: #6e6e6e;
 border-radius: 50%;
 position: absolute;
 top: -40rpx;
@@ -143,7 +176,7 @@ font-size: 40rpx;
 .color-block{
 color: #fff;
 font-size: 35rpx;
-background: #FB4C22;
+background: #ff712f;
 }
 
 /*弹窗遮罩层 */

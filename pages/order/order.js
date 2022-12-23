@@ -10,10 +10,10 @@ Page({
     {ft_name: "锡纸烤饭",ft_id: "c"},
     {ft_name: "精品冷碟",ft_id: "d"}],
     tabsList: [
-            {ft_id: "a",f_Cooks_Id:'11',food_Img:'../../../images/meishi.jpg',f_Name:'小炒牛肉',f_Description:'真的很好吃，商家推荐！',f_DPrice:'12',f_Price:'18',quantity:'0',f_Introduction:'小炒牛肉是一道美食，制作原料主要有牛肉、玉兰片、鸡蛋清等，辅料有小葱、江米酒、 味精、酱油、姜、植物油、盐、淀粉等，属于川菜。',si_imgUrl:[{pic_Url:'../../../images/meishi.jpg'},{pic_Url:'../../../images/meishi2.jpg'}]},
-            {ft_id: "a",f_Cooks_Id:'12',food_Img:'../../../images/meishi2.jpg',f_Name:'虎皮凤爪',f_Description:'真的很好吃，商家推荐！',f_DPrice:'12',f_Price:'18',quantity:'0',f_Introduction:'虎皮凤爪是一道色香味俱全的地方名肴，属于粤菜系。皮酥肉嫩，色泽饱满，特别诱人，家常下酒小菜。肉掌丰厚，鲜香味辣，越嚼越香，越嚼越有劲。以鸡爪 花椒、桂皮、八角、少许盐等制作而成。',si_imgUrl:[{pic_Url:'../../../images/meishi2.jpg'},{pic_Url:'../../../images/meishi3.jpg'}]},
-            {ft_id: "b",f_Cooks_Id:'13',food_Img:'../../../images/meishi3.jpg',f_Name:'红烧牛腩',f_Description:'真的很好吃，商家推荐！',f_DPrice:'12',f_Price:'18',quantity:'0',f_Introduction:'红烧牛腩是四川省传统的特色名菜，属于川菜系。主要食材是牛腩。卤汁乳白稠浓，肉质肥嫩，滋味鲜美。营养价值较高，一般人都适合食用。',si_imgUrl:[{pic_Url:'../../../images/meishi3.jpg'},{pic_Url:'../../../images/meishi4.jpg'}]},
-            {ft_id: "b",f_Cooks_Id:'14',food_Img:'../../../images/meishi4.jpg',f_Name:'羊肉串',f_Description:'真的很好吃，商家推荐！',f_DPrice:'12',f_Price:'18',quantity:'0',f_Introduction:'羊肉串是指新鲜的羊肉用竹签或钢签穿成串后烧烤制成的菜品，是一种比较常见的烧烤类菜品。',si_imgUrl:[{pic_Url:'../../../images/meishi4.jpg'},{pic_Url:'../../../images/meishi5.jpg'}]},{ft_id: "c",f_Cooks_Id:'15',food_Img:'../../../images/meishi.jpg',f_Name:'小炒牛肉',f_Description:'真的很好吃，商家推荐！',f_DPrice:'12',f_Price:'18',quantity:'0',f_Introduction:'小炒牛肉是一道美食，制作原料主要有牛肉、玉兰片、鸡蛋清等，辅料有小葱、江米酒、 味精、酱油、姜、植物油、盐、淀粉等，属于川菜。',si_imgUrl:[{pic_Url:'../../../images/meishi.jpg'},{pic_Url:'../../../images/meishi2.jpg'}]},
+            {ft_id: "a",f_Cooks_Id:'11',food_Img:'https://ts1.cn.mm.bing.net/th?id=OIP-C.s6dpfSeTuglKhh1UbDEZDQHaE8&w=306&h=204&c=8&rs=1&qlt=90&o=6&dpr=1.3&pid=3.1&rm=2',f_Name:'小炒牛肉',f_Description:'真的很好吃，商家推荐！',f_DPrice:'12',f_Price:'18',quantity:'0',f_Introduction:'小炒牛肉是一道美食，制作原料主要有牛肉、玉兰片、鸡蛋清等，辅料有小葱、江米酒、 味精、酱油、姜、植物油、盐、淀粉等，属于川菜。',si_imgUrl:[{pic_Url:'../../../images/meishi.jpg'},{pic_Url:'../../../images/meishi2.jpg'}]},
+            {ft_id: "a",f_Cooks_Id:'12',food_Img:'https://ts1.cn.mm.bing.net/th?id=OIP-C.s6dpfSeTuglKhh1UbDEZDQHaE8&w=306&h=204&c=8&rs=1&qlt=90&o=6&dpr=1.3&pid=3.1&rm=2',f_Name:'虎皮凤爪',f_Description:'真的很好吃，商家推荐！',f_DPrice:'12',f_Price:'18',quantity:'0',f_Introduction:'虎皮凤爪是一道色香味俱全的地方名肴，属于粤菜系。皮酥肉嫩，色泽饱满，特别诱人，家常下酒小菜。肉掌丰厚，鲜香味辣，越嚼越香，越嚼越有劲。以鸡爪 花椒、桂皮、八角、少许盐等制作而成。',si_imgUrl:[{pic_Url:'../../../images/meishi2.jpg'},{pic_Url:'../../../images/meishi3.jpg'}]},
+            {ft_id: "b",f_Cooks_Id:'13',food_Img:'https://ts1.cn.mm.bing.net/th?id=OIP-C.s6dpfSeTuglKhh1UbDEZDQHaE8&w=306&h=204&c=8&rs=1&qlt=90&o=6&dpr=1.3&pid=3.1&rm=2',f_Name:'红烧牛腩',f_Description:'真的很好吃，商家推荐！',f_DPrice:'12',f_Price:'18',quantity:'0',f_Introduction:'红烧牛腩是四川省传统的特色名菜，属于川菜系。主要食材是牛腩。卤汁乳白稠浓，肉质肥嫩，滋味鲜美。营养价值较高，一般人都适合食用。',si_imgUrl:[{pic_Url:'../../../images/meishi3.jpg'},{pic_Url:'../../../images/meishi4.jpg'}]},
+            {ft_id: "b",f_Cooks_Id:'14',food_Img:'https://ts1.cn.mm.bing.net/th?id=OIP-C.s6dpfSeTuglKhh1UbDEZDQHaE8&w=306&h=204&c=8&rs=1&qlt=90&o=6&dpr=1.3&pid=3.1&rm=2',f_Name:'羊肉串',f_Description:'真的很好吃，商家推荐！',f_DPrice:'12',f_Price:'18',quantity:'0',f_Introduction:'羊肉串是指新鲜的羊肉用竹签或钢签穿成串后烧烤制成的菜品，是一种比较常见的烧烤类菜品。',si_imgUrl:[{pic_Url:'../../../images/meishi4.jpg'},{pic_Url:'../../../images/meishi5.jpg'}]},{ft_id: "c",f_Cooks_Id:'15',food_Img:'../../../images/meishi.jpg',f_Name:'小炒牛肉',f_Description:'真的很好吃，商家推荐！',f_DPrice:'12',f_Price:'18',quantity:'0',f_Introduction:'小炒牛肉是一道美食，制作原料主要有牛肉、玉兰片、鸡蛋清等，辅料有小葱、江米酒、 味精、酱油、姜、植物油、盐、淀粉等，属于川菜。',si_imgUrl:[{pic_Url:'../../../images/meishi.jpg'},{pic_Url:'../../../images/meishi2.jpg'}]},
             {ft_id: "c",f_Cooks_Id:'15',food_Img:'../../../images/meishi2.jpg',f_Name:'虎皮凤爪',f_Description:'真的很好吃，商家推荐！',f_DPrice:'12',f_Price:'18',quantity:'0',f_Introduction:'虎皮凤爪是一道色香味俱全的地方名肴，属于粤菜系。皮酥肉嫩，色泽饱满，特别诱人，家常下酒小菜。肉掌丰厚，鲜香味辣，越嚼越香，越嚼越有劲。以鸡爪 花椒、桂皮、八角、少许盐等制作而成。',si_imgUrl:[{pic_Url:'../../../images/meishi2.jpg'},{pic_Url:'../../../images/meishi3.jpg'}]},
             {ft_id: "d",f_Cooks_Id:'16',food_Img:'../../../images/meishi3.jpg',f_Name:'红烧牛腩',f_Description:'真的很好吃，商家推荐！',f_DPrice:'12',f_Price:'18',quantity:'0',f_Introduction:'红烧牛腩是四川省传统的特色名菜，属于川菜系。主要食材是牛腩。卤汁乳白稠浓，肉质肥嫩，滋味鲜美。营养价值较高，一般人都适合食用。',si_imgUrl:[{pic_Url:'../../../images/meishi3.jpg'},{pic_Url:'../../../images/meishi4.jpg'}]},
             {ft_id: "d",f_Cooks_Id:'17',food_Img:'../../../images/meishi4.jpg',f_Name:'羊肉串',f_Description:'真的很好吃，商家推荐！',f_DPrice:'12',f_Price:'18',quantity:'0',f_Introduction:'羊肉串是指新鲜的羊肉用竹签或钢签穿成串后烧烤制成的菜品，是一种比较常见的烧烤类菜品。',si_imgUrl:[{pic_Url:'../../../images/meishi4.jpg'},{pic_Url:'../../../images/meishi5.jpg'}]}],
@@ -352,7 +352,7 @@ Page({
   // 跳转确认订单页面
   gotoOrder: function () {
     wx.navigateTo({
-      url: '../confirmOrder/confirmOrder'
+      url: '/pages/checkout/checkout'
     })
   },
   //跳转搜索
@@ -384,7 +384,7 @@ Page({
       return
     }
     wx.navigateTo({
-      url: '../../category/previewOrder/previewOrder',
+      url: '/pages/checkout/checkout',
     })
   }
 })

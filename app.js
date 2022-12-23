@@ -4,6 +4,9 @@ var user = require('./utils/user.js');
 
 App({
   onLaunch: function() {
+    wx.cloud.init({
+      traceUser: true,
+  });
     const updateManager = wx.getUpdateManager();
     wx.getUpdateManager().onUpdateReady(function() {
       wx.showModal({

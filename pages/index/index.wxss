@@ -35,9 +35,9 @@
 
 .m-menu image {
   display: block;
-  width: 140rpx;
-  height: 110rpx;
-  border-radius: 30rpx;
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 10rpx;
   margin: 5rpx auto;
   margin-bottom: 18rpx;
 }
