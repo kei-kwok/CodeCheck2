@@ -1,25 +1,25 @@
 <view class="container">
 <!-- 头部 -->
 <view class="color"></view>
-<image  src="https://tse2-mm.cn.bing.net/th/id/OIP-C.QEoro_KDVlpg3_xNz3ROrQHaFj?w=248&h=186&c=7&r=0&o=5&dpr=1.3&pid=1.7" background-size="cover" class="img"></image>
-<view class="name">xxxx美食</view>
+<image  src="{{restaurantMessage.logo}}" background-size="cover" class="img"></image>
+<view class="name">{{restaurantMessage.name}}</view>
 <!-- 信息 -->
 <view class="grey">
   <!-- 地址 -->
   <view class="txt-1">
     <image class="icon" src="/static/images/business-address.png"></image>
-    <text class="txt-3">地址地址地址地址</text>
+    <text class="txt-3">{{restaurantMessage.address}}</text>
   </view>
   <!-- 电话 -->
   <view class="txt-2">
     <image class="icon" src="/static/images/business-phone.png"></image>
-    <text class="txt-3">123456789123</text>
+    <text class="txt-3">{{restaurantMessage.phone}}</text>
   </view>
   </view>
 <!-- 简介 -->
   <view class="main">
     <text class="main-txt">店铺简介</text>
-    <text class="main-txt-1">简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介</text>
+    <text class="main-txt-1">{{restaurantMessage.description}}</text>
   </view>
 <!-- button -->
   <navigator url="/pages/order/order">

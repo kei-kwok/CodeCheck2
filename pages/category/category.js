@@ -5,7 +5,7 @@ Page({
   data: {
     navList: [],
     goodsList: [],
-    id: 0,
+    id: "",
     currentCategory: {},
     scrollLeft: 0,
     scrollTop: 0,
@@ -16,12 +16,12 @@ Page({
   },
   onLoad: function(options) {
     // 页面初始化 options为页面跳转所带来的参数
-    // var that = this;
-    // if (options.id) {
-    //   that.setData({
-    //     id: parseInt(options.id)
-    //   });
-    // }
+    var that = this;
+    if (options.id) {
+      that.setData({
+        id: options.id
+      });
+    }
 
     wx.getSystemInfo({
       success: function(res) {
@@ -31,8 +31,8 @@ Page({
       }
     });
 
-
-    this.getCategoryInfo();
+    this.test()
+    //this.getCategoryInfo();
 
   },
   getCategoryInfo: function() {
@@ -148,5 +148,28 @@ Page({
 	   return false;
 	}
     this.getGoodsList();
-   }
+   },
+   test(){
+    console.log("i'am coming !!!!!!")
+    var that=this;
+    wx.request({
+      url: "https://624w0n2786.yicp.fun/cate",
+      method: "GET",
+      data: {
+        page: that.data.page,
+        varietyId: that.data.id
+      },
+      success: function (res) {
+        // 一般在这一打印下看看是否拿到数据
+        if (res.data.code === 200) {
+          that.setData({
+            goodsList: res.data.data
+          })
+          }
+        },
+        fail: function(){
+          console.log("fail!!!")
+        }
+      })
+  }
 })

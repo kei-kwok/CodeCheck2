@@ -29,7 +29,7 @@
       <view class="pubuBox">
             <view class="pubuItem">
                 <view class="item-masonry" wx:for="{{comList}}" wx:for-item="item" wx:for-index="index" wx:key="index">
-                    <image src="{{item.image}}" mode="widthFix"></image>
+                    <image src="{{item.logo}}" mode="widthFix"></image>
                     <view class="listtitle"> <!-- 这是没有高度的父盒子（下半部分） -->
                         <view class="listtitle1">{{ item.description }}</view>
                         <view class="listtitle2">

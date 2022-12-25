@@ -12,7 +12,7 @@
   <swiper class="banner" indicator-dots="true" autoplay="true" interval="3000" duration="1000">
     <swiper-item wx:for="{{banner}}" wx:key="id">
       <!-- <navigator url="{{item.link}}"> -->
-      <image src="{{item.data}}" background-size="cover"></image>
+      <image src="{{item}}" background-size="cover"></image>
       <!-- </navigator> -->
     </swiper-item>
   </swiper>
@@ -40,8 +40,8 @@
         <view class="pubuBox">   
             <view class="pubuItem">    
                 <view class="item-masonry" wx:for="{{comList}}" wx:for-item="item" wx:for-index="index" wx:key="index"> 
-                <navigator url="/pages/business/business">
-                    <image src="{{item.image}}" mode="widthFix"></image>
+                <navigator url="/pages/business/business?id={{item.id}}">
+                    <image src="{{item.logo}}" mode="widthFix"></image>
                     <view class="listtitle"> <!-- 这是没有高度的父盒子（下半部分） -->
                         <view class="listtitle1">{{ item.description }}</view>
                         <view class="listtitle2">

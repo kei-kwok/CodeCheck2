@@ -10,9 +10,10 @@ Page({
   data: {
     // 轮播图
     banner: [ 
-      {url:"//tse4-mm.cn.bing.net/th/id/OIP-C.WCqeGtPisiaW77NrCdANbgHaE8?w=298&h=197&c=7&r=0&o=5&dpr=1.3&pid=1.7"},
-      {url:"//tse3-mm.cn.bing.net/th/id/OIP-C.KkPqg6uB5i98OKrhDpkfmQHaEY?w=293&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7"},
-      {url:"//tse4-mm.cn.bing.net/th/id/OIP-C.QBFNFDqiU2F2oFn0OyOCdAHaEc?w=298&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7"}
+
+      // {url:"//tse4-mm.cn.bing.net/th/id/OIP-C.WCqeGtPisiaW77NrCdANbgHaE8?w=298&h=197&c=7&r=0&o=5&dpr=1.3&pid=1.7"},
+      // {url:"//tse3-mm.cn.bing.net/th/id/OIP-C.KkPqg6uB5i98OKrhDpkfmQHaEY?w=293&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7"},
+      // {url:"//tse4-mm.cn.bing.net/th/id/OIP-C.QBFNFDqiU2F2oFn0OyOCdAHaEc?w=298&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7"}
       // {
       //   id:"106383857430822913"
       // }
@@ -20,7 +21,7 @@ Page({
     // 分类
     channel: [
       {
-        id:"clothes",
+        id:"132450026835148801",
         name:"服装",
         iconUrl:"/static/images/home1.png",
       },
@@ -30,12 +31,12 @@ Page({
         iconUrl:"/static/images/home2.png",
       },
       {
-        id:"electronics",
+        id:"132450361842597893",
         name:"电子产品",
         iconUrl:"/static/images/home3.png",
       },
       {
-        id:"tea",
+        id:"132450477806714888",
         name:"茶饮",
         iconUrl:"/static/images/home4.png",
       },
@@ -45,7 +46,7 @@ Page({
         iconUrl:"/static/images/home5.png",
       },
       {
-        id:"food",
+        id:"132450477806714888",
         name:"食品",
         iconUrl:"/static/images/home6.png",
       },
@@ -189,6 +190,8 @@ Page({
   },
 
   onPullDownRefresh() {
+    this.getSwiper()
+    this.test();
     wx.showNavigationBarLoading() //在标题栏中显示加载
     this.getIndexData();
     wx.hideNavigationBarLoading() //完成停止加载
@@ -213,7 +216,9 @@ Page({
     });
   },
   onLoad: function(options) {
-    this.getComList();
+    // this.getComList();
+    this.getSwiper()
+    this.test();
     this.setData({
       colseCoupon: false
     });
@@ -340,4 +345,46 @@ Page({
     //   }
     // });
   },
+  test(){
+    console.log("i'am coming !!!!!!")
+    var that=this;
+    wx.request({
+      url: "https://624w0n2786.yicp.fun/main",
+      method: "GET",
+      data: {
+        page: 1
+      },
+      success: function (res) {
+        // 一般在这一打印下看看是否拿到数据
+        if (res.data.code === 200) {
+          that.setData({
+            comList: res.data.data
+          })
+          }
+        },
+        fail: function(){
+          console.log("fail!!!")
+        }
+      })
+  },
+  getSwiper(){
+    var that=this
+    wx.request({
+      url: 'https://624w0n2786.yicp.fun/main/swiper',
+      method: 'GET',
+      data: {
+        id: "132799955000623111"
+      },
+      success: function (res) {
+        
+          if(res.data.code===200){
+            that.setData({
+              banner: res.data.data
+            })
+            console.log("swiper!!!")
+            console.log(this.data.banner)
+          }
+      }
+    })
+  }
 })
