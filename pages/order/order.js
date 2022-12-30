@@ -5,18 +5,21 @@ Page({
    * 页面的初始数据
    */
   data: {
-    tabs: [{ft_name: "推荐",ft_id: "a"},
-    {ft_name: "锡纸饭套餐",ft_id: "b"},
-    {ft_name: "锡纸烤饭",ft_id: "c"},
-    {ft_name: "精品冷碟",ft_id: "d"}],
+    tabs: [
+    //   {ft_name: "推荐",ft_id: "a"},
+    // {ft_name: "锡纸饭套餐",ft_id: "b"},
+    // {ft_name: "锡纸烤饭",ft_id: "c"},
+    // {ft_name: "精品冷碟",ft_id: "d"}
+  ],
     tabsList: [
-            {ft_id: "a",f_Cooks_Id:'11',food_Img:'https://ts1.cn.mm.bing.net/th?id=OIP-C.s6dpfSeTuglKhh1UbDEZDQHaE8&w=306&h=204&c=8&rs=1&qlt=90&o=6&dpr=1.3&pid=3.1&rm=2',f_Name:'小炒牛肉',f_Description:'真的很好吃，商家推荐！',f_DPrice:'12',f_Price:'18',quantity:'0',f_Introduction:'小炒牛肉是一道美食，制作原料主要有牛肉、玉兰片、鸡蛋清等，辅料有小葱、江米酒、 味精、酱油、姜、植物油、盐、淀粉等，属于川菜。',si_imgUrl:[{pic_Url:'../../../images/meishi.jpg'},{pic_Url:'../../../images/meishi2.jpg'}]},
-            {ft_id: "a",f_Cooks_Id:'12',food_Img:'https://ts1.cn.mm.bing.net/th?id=OIP-C.s6dpfSeTuglKhh1UbDEZDQHaE8&w=306&h=204&c=8&rs=1&qlt=90&o=6&dpr=1.3&pid=3.1&rm=2',f_Name:'虎皮凤爪',f_Description:'真的很好吃，商家推荐！',f_DPrice:'12',f_Price:'18',quantity:'0',f_Introduction:'虎皮凤爪是一道色香味俱全的地方名肴，属于粤菜系。皮酥肉嫩，色泽饱满，特别诱人，家常下酒小菜。肉掌丰厚，鲜香味辣，越嚼越香，越嚼越有劲。以鸡爪 花椒、桂皮、八角、少许盐等制作而成。',si_imgUrl:[{pic_Url:'../../../images/meishi2.jpg'},{pic_Url:'../../../images/meishi3.jpg'}]},
-            {ft_id: "b",f_Cooks_Id:'13',food_Img:'https://ts1.cn.mm.bing.net/th?id=OIP-C.s6dpfSeTuglKhh1UbDEZDQHaE8&w=306&h=204&c=8&rs=1&qlt=90&o=6&dpr=1.3&pid=3.1&rm=2',f_Name:'红烧牛腩',f_Description:'真的很好吃，商家推荐！',f_DPrice:'12',f_Price:'18',quantity:'0',f_Introduction:'红烧牛腩是四川省传统的特色名菜，属于川菜系。主要食材是牛腩。卤汁乳白稠浓，肉质肥嫩，滋味鲜美。营养价值较高，一般人都适合食用。',si_imgUrl:[{pic_Url:'../../../images/meishi3.jpg'},{pic_Url:'../../../images/meishi4.jpg'}]},
-            {ft_id: "b",f_Cooks_Id:'14',food_Img:'https://ts1.cn.mm.bing.net/th?id=OIP-C.s6dpfSeTuglKhh1UbDEZDQHaE8&w=306&h=204&c=8&rs=1&qlt=90&o=6&dpr=1.3&pid=3.1&rm=2',f_Name:'羊肉串',f_Description:'真的很好吃，商家推荐！',f_DPrice:'12',f_Price:'18',quantity:'0',f_Introduction:'羊肉串是指新鲜的羊肉用竹签或钢签穿成串后烧烤制成的菜品，是一种比较常见的烧烤类菜品。',si_imgUrl:[{pic_Url:'../../../images/meishi4.jpg'},{pic_Url:'../../../images/meishi5.jpg'}]},{ft_id: "c",f_Cooks_Id:'15',food_Img:'../../../images/meishi.jpg',f_Name:'小炒牛肉',f_Description:'真的很好吃，商家推荐！',f_DPrice:'12',f_Price:'18',quantity:'0',f_Introduction:'小炒牛肉是一道美食，制作原料主要有牛肉、玉兰片、鸡蛋清等，辅料有小葱、江米酒、 味精、酱油、姜、植物油、盐、淀粉等，属于川菜。',si_imgUrl:[{pic_Url:'../../../images/meishi.jpg'},{pic_Url:'../../../images/meishi2.jpg'}]},
-            {ft_id: "c",f_Cooks_Id:'15',food_Img:'../../../images/meishi2.jpg',f_Name:'虎皮凤爪',f_Description:'真的很好吃，商家推荐！',f_DPrice:'12',f_Price:'18',quantity:'0',f_Introduction:'虎皮凤爪是一道色香味俱全的地方名肴，属于粤菜系。皮酥肉嫩，色泽饱满，特别诱人，家常下酒小菜。肉掌丰厚，鲜香味辣，越嚼越香，越嚼越有劲。以鸡爪 花椒、桂皮、八角、少许盐等制作而成。',si_imgUrl:[{pic_Url:'../../../images/meishi2.jpg'},{pic_Url:'../../../images/meishi3.jpg'}]},
-            {ft_id: "d",f_Cooks_Id:'16',food_Img:'../../../images/meishi3.jpg',f_Name:'红烧牛腩',f_Description:'真的很好吃，商家推荐！',f_DPrice:'12',f_Price:'18',quantity:'0',f_Introduction:'红烧牛腩是四川省传统的特色名菜，属于川菜系。主要食材是牛腩。卤汁乳白稠浓，肉质肥嫩，滋味鲜美。营养价值较高，一般人都适合食用。',si_imgUrl:[{pic_Url:'../../../images/meishi3.jpg'},{pic_Url:'../../../images/meishi4.jpg'}]},
-            {ft_id: "d",f_Cooks_Id:'17',food_Img:'../../../images/meishi4.jpg',f_Name:'羊肉串',f_Description:'真的很好吃，商家推荐！',f_DPrice:'12',f_Price:'18',quantity:'0',f_Introduction:'羊肉串是指新鲜的羊肉用竹签或钢签穿成串后烧烤制成的菜品，是一种比较常见的烧烤类菜品。',si_imgUrl:[{pic_Url:'../../../images/meishi4.jpg'},{pic_Url:'../../../images/meishi5.jpg'}]}],
+            // {ft_id: "a",f_Cooks_Id:'11',food_Img:'https://ts1.cn.mm.bing.net/th?id=OIP-C.s6dpfSeTuglKhh1UbDEZDQHaE8&w=306&h=204&c=8&rs=1&qlt=90&o=6&dpr=1.3&pid=3.1&rm=2',f_Name:'小炒牛肉',f_Description:'真的很好吃，商家推荐！',f_DPrice:'12',f_Price:'18',quantity:'0',f_Introduction:'小炒牛肉是一道美食，制作原料主要有牛肉、玉兰片、鸡蛋清等，辅料有小葱、江米酒、 味精、酱油、姜、植物油、盐、淀粉等，属于川菜。',si_imgUrl:[{pic_Url:'../../../images/meishi.jpg'},{pic_Url:'../../../images/meishi2.jpg'}]},
+            // {ft_id: "a",f_Cooks_Id:'12',food_Img:'https://ts1.cn.mm.bing.net/th?id=OIP-C.s6dpfSeTuglKhh1UbDEZDQHaE8&w=306&h=204&c=8&rs=1&qlt=90&o=6&dpr=1.3&pid=3.1&rm=2',f_Name:'虎皮凤爪',f_Description:'真的很好吃，商家推荐！',f_DPrice:'12',f_Price:'18',quantity:'0',f_Introduction:'虎皮凤爪是一道色香味俱全的地方名肴，属于粤菜系。皮酥肉嫩，色泽饱满，特别诱人，家常下酒小菜。肉掌丰厚，鲜香味辣，越嚼越香，越嚼越有劲。以鸡爪 花椒、桂皮、八角、少许盐等制作而成。',si_imgUrl:[{pic_Url:'../../../images/meishi2.jpg'},{pic_Url:'../../../images/meishi3.jpg'}]},
+            // {ft_id: "b",f_Cooks_Id:'13',food_Img:'https://ts1.cn.mm.bing.net/th?id=OIP-C.s6dpfSeTuglKhh1UbDEZDQHaE8&w=306&h=204&c=8&rs=1&qlt=90&o=6&dpr=1.3&pid=3.1&rm=2',f_Name:'红烧牛腩',f_Description:'真的很好吃，商家推荐！',f_DPrice:'12',f_Price:'18',quantity:'0',f_Introduction:'红烧牛腩是四川省传统的特色名菜，属于川菜系。主要食材是牛腩。卤汁乳白稠浓，肉质肥嫩，滋味鲜美。营养价值较高，一般人都适合食用。',si_imgUrl:[{pic_Url:'../../../images/meishi3.jpg'},{pic_Url:'../../../images/meishi4.jpg'}]},
+            // {ft_id: "b",f_Cooks_Id:'14',food_Img:'https://ts1.cn.mm.bing.net/th?id=OIP-C.s6dpfSeTuglKhh1UbDEZDQHaE8&w=306&h=204&c=8&rs=1&qlt=90&o=6&dpr=1.3&pid=3.1&rm=2',f_Name:'羊肉串',f_Description:'真的很好吃，商家推荐！',f_DPrice:'12',f_Price:'18',quantity:'0',f_Introduction:'羊肉串是指新鲜的羊肉用竹签或钢签穿成串后烧烤制成的菜品，是一种比较常见的烧烤类菜品。',si_imgUrl:[{pic_Url:'../../../images/meishi4.jpg'},{pic_Url:'../../../images/meishi5.jpg'}]},{ft_id: "c",f_Cooks_Id:'15',food_Img:'../../../images/meishi.jpg',f_Name:'小炒牛肉',f_Description:'真的很好吃，商家推荐！',f_DPrice:'12',f_Price:'18',quantity:'0',f_Introduction:'小炒牛肉是一道美食，制作原料主要有牛肉、玉兰片、鸡蛋清等，辅料有小葱、江米酒、 味精、酱油、姜、植物油、盐、淀粉等，属于川菜。',si_imgUrl:[{pic_Url:'../../../images/meishi.jpg'},{pic_Url:'../../../images/meishi2.jpg'}]},
+            // {ft_id: "c",f_Cooks_Id:'15',food_Img:'../../../images/meishi2.jpg',f_Name:'虎皮凤爪',f_Description:'真的很好吃，商家推荐！',f_DPrice:'12',f_Price:'18',quantity:'0',f_Introduction:'虎皮凤爪是一道色香味俱全的地方名肴，属于粤菜系。皮酥肉嫩，色泽饱满，特别诱人，家常下酒小菜。肉掌丰厚，鲜香味辣，越嚼越香，越嚼越有劲。以鸡爪 花椒、桂皮、八角、少许盐等制作而成。',si_imgUrl:[{pic_Url:'../../../images/meishi2.jpg'},{pic_Url:'../../../images/meishi3.jpg'}]},
+            // {ft_id: "d",f_Cooks_Id:'16',food_Img:'../../../images/meishi3.jpg',f_Name:'红烧牛腩',f_Description:'真的很好吃，商家推荐！',f_DPrice:'12',f_Price:'18',quantity:'0',f_Introduction:'红烧牛腩是四川省传统的特色名菜，属于川菜系。主要食材是牛腩。卤汁乳白稠浓，肉质肥嫩，滋味鲜美。营养价值较高，一般人都适合食用。',si_imgUrl:[{pic_Url:'../../../images/meishi3.jpg'},{pic_Url:'../../../images/meishi4.jpg'}]},
+            // {ft_id: "d",f_Cooks_Id:'17',food_Img:'../../../images/meishi4.jpg',f_Name:'羊肉串',f_Description:'真的很好吃，商家推荐！',f_DPrice:'12',f_Price:'18',quantity:'0',f_Introduction:'羊肉串是指新鲜的羊肉用竹签或钢签穿成串后烧烤制成的菜品，是一种比较常见的烧烤类菜品。',si_imgUrl:[{pic_Url:'../../../images/meishi4.jpg'},{pic_Url:'../../../images/meishi5.jpg'}]}
+          ],
     indexId: 0,
     toTitle: "title-0",
     scrollTop: 0,
@@ -41,7 +44,7 @@ Page({
     });
   },
   scrollToLeft(res) {
-    console.log("scrollToLeft-res:" + JSON.stringify(res) + JSON.stringify(this.data.top));
+    // console.log("scrollToLeft-res:" + JSON.stringify(res) + JSON.stringify(this.data.top));
     this.setData({
       scrollTop: res.detail.scrollTop
     })
@@ -57,15 +60,21 @@ Page({
     }
   },
   onLoad: async function (options) {
-    console.log(this.data.tabsList)
+    console.log("onload!!!")
     var that = this;
+    that.data.targetId=options.id
+    console.log(that.targetId)
+    this.gettabs();
+    this.getDishes();
     wx.showLoading({
       mask: true,
       title: '加载中…',
     })
     // //获取分类
+    // gettabs();
     // await GetFoodType(that)
     // //获取菜品
+    // getDishes();
     // await GetFoodCook(that)
     wx.hideLoading()
     console.log(that.data.tabsList)
@@ -77,7 +86,7 @@ Page({
         });
         var top2 = new Array();
         for (var i = 0; i < that.data.tabs.length; i++) {
-          wx.createSelectorQuery().select('#view-' + that.data.tabs[i].ft_id).boundingClientRect(function (rect) {
+          wx.createSelectorQuery().select('#view-' + that.data.tabs[i].id).boundingClientRect(function (rect) {
             var isTop = Number(rect.top);
             top2.push(isTop);
             console.log("view-c:" + JSON.stringify(rect));
@@ -98,7 +107,7 @@ Page({
     if (arr.length > 0) {
       for (var j in that.data.tabsList) {
       for (var i in arr) {
-          if (that.data.tabsList[j].f_Cooks_Id == arr[i].f_Cooks_Id) {
+          if (that.data.tabsList[j].id == arr[i].id) {
             that.data.tabsList[j].quantity = arr[i].quantity;
             break
           } else {
@@ -116,7 +125,7 @@ Page({
     var totalNum = 0;
     if (arr.length > 0) {
       for (var i in arr) {
-        totalPrice += arr[i].f_DPrice * arr[i].quantity;
+        totalPrice += arr[i].price * arr[i].quantity;
         totalNum += Number(arr[i].quantity);
       }
     }
@@ -134,11 +143,11 @@ Page({
     var arr = wx.getStorageSync('cart') || [];
     var f = false;
     for (var i in this.data.tabsList) { // 遍历菜单找到被点击的菜品，数量加1
-      if (this.data.tabsList[i].f_Cooks_Id == id) {
+      if (this.data.tabsList[i].id == id) {
         this.data.tabsList[i].quantity += 1;
         if (arr.length > 0) {
           for (var j in arr) { // 遍历购物车找到被点击的菜品，数量加1
-            if (arr[j].f_Cooks_Id == id) {
+            if (arr[j].id == id) {
               arr[j].quantity += 1;
               f = true;
               try {
@@ -174,14 +183,14 @@ Page({
     var id = e.currentTarget.dataset.id;
     var arr = wx.getStorageSync('cart') || [];
     for (var i in this.data.tabsList) {
-      if (this.data.tabsList[i].f_Cooks_Id == id) {
+      if (this.data.tabsList[i].id == id) {
         this.data.tabsList[i].quantity -= 1;
         if (this.data.tabsList[i].quantity <= 0) {
           this.data.tabsList[i].quantity = 0;
         }
         if (arr.length > 0) {
           for (var j in arr) {
-            if (arr[j].f_Cooks_Id == id) {
+            if (arr[j].id == id) {
               arr[j].quantity -= 1;
               if (arr[j].quantity <= 0) {
                 this.removeByValue(arr, id) //77
@@ -214,7 +223,7 @@ Page({
   // 定义根据id删除数组的方法
   removeByValue: function (array, val) {
     for (var i = 0; i < array.length; i++) {
-      if (array[i].f_Cooks_Id == val) {
+      if (array[i].id == val) {
         array.splice(i, 1);
         break;
       }
@@ -226,7 +235,7 @@ Page({
     var totalP = 0;
     var totalN = 0
     for (var i in cartList) { // 循环列表得到每个数据
-      totalP += cartList[i].quantity * cartList[i].f_DPrice; // 所有价格加起来     
+      totalP += cartList[i].quantity * cartList[i].price; // 所有价格加起来     
       totalN += cartList[i].quantity
     }
     this.setData({ // 最后赋值到data中渲染到页面
@@ -262,7 +271,7 @@ Page({
     var index = e.currentTarget.dataset.index;
     var arr = wx.getStorageSync('cart')
     for (var i in this.data.tabsList) {
-      if (this.data.tabsList[i].f_Cooks_Id == id) {
+      if (this.data.tabsList[i].id == id) {
         this.data.tabsList[i].quantity = 0;
       }
     }
@@ -365,7 +374,7 @@ Page({
     var id = e.currentTarget.dataset.id;
     var goodDetail = [];
     for (var i = 0; i < this.data.tabsList.length; i++) {
-      if (this.data.tabsList[i].f_Cooks_Id == id) {
+      if (this.data.tabsList[i].id == id) {
         goodDetail.push(this.data.tabsList[i]);
       }
     }
@@ -386,6 +395,64 @@ Page({
     wx.navigateTo({
       url: '/pages/checkout/checkout',
     })
+  },
+  gettabs(){
+    
+    var that=this;
+    console.log("targetId")
+    console.log(that.data.targetId)
+    wx.request({
+      url: "https://624w0n2786.yicp.fun/restaurant/category",
+      method: "GET",
+      data: {
+        id: that.data.targetId
+      },
+      success: function (res) {
+        // 一般在这一打印下看看是否拿到数据
+        if (res.data.code === 200) {
+          that.setData({
+            tabs: res.data.data
+          })
+          }
+        },
+        fail: function(){
+          console.log("fail!!!")
+        }
+      })
+  },
+  getDishes(){
+    var that=this;
+    wx.request({
+      url: "https://624w0n2786.yicp.fun/restaurant/dishes",
+      method: "GET",
+      data: {
+        id: that.data.targetId
+      },
+      success: function (res) {
+        // 一般在这一打印下看看是否拿到数据
+        if (res.data.code === 200) {
+          
+          var data=res.data.data;
+          var list=[];
+          for(var i=0;i<data.length;i++){
+            for(var j=0;j<data[i].length;j++){
+              var temp=data[i][j];
+              // var name="quantity";
+              temp.quantity=0;
+              list.push(temp);
+            }
+          }
+          that.setData({
+            tabsList: list
+          })
+          console.log("here is list")
+          console.log(list)
+          }
+        },
+        fail: function(){
+          console.log("fail!!!")
+        }
+      })
   }
 })
 //获取商品信息

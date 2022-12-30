@@ -22,7 +22,7 @@
     <text class="main-txt-1">{{restaurantMessage.description}}</text>
   </view>
 <!-- button -->
-  <navigator url="/pages/order/order">
+  <navigator url="/pages/order/order?id={{restaurantMessage.id}}">
     <button class="btn">快看菜单 今天吃什么</button>
   </navigator>
 </view>
