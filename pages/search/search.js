@@ -62,12 +62,23 @@ Page({
   getHelpKeyword: function() {
     let that = this;
     util.request(api.SearchHelper, {
-      keyword: that.data.keyword
+      page:1,
+      query: that.data.keyword
     }).then(function(res) {
-      if (res.errno === 0) {
+      console.log("res")
+      console.log(res)
+      if (res.code === 200) {
+        var list =res.data;
+        for(var i=0;i<list.length;i++){
+          console.log(list[i].name)
+          list[i].name=list[i].name.replace("<em>","")
+          list[i].name=list[i].name.replace("</em>","")
+        }
         that.setData({
-          helpKeyword: res.data
+          helpKeyword: list
         });
+        console.log("helpKey")
+        console.log(that.data.helpKeyword);
       }
     });
   },
@@ -117,7 +128,12 @@ Page({
   },
   onKeywordTap: function(event) {
 
-    this.getSearchResult(event.target.dataset.keyword);
+    // this.getSearchResult(event.target.dataset.keyword);
+    console.log("event")
+    console.log(event)
+    wx.navigateTo({
+      url: '/pages/business/business?id='+event.target.dataset.keyword.id,
+    })
 
   },
   getSearchResult(keyword) {

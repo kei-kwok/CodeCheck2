@@ -431,7 +431,6 @@ Page({
       success: function (res) {
         // 一般在这一打印下看看是否拿到数据
         if (res.data.code === 200) {
-          
           var data=res.data.data;
           var list=[];
           for(var i=0;i<data.length;i++){
@@ -445,8 +444,6 @@ Page({
           that.setData({
             tabsList: list
           })
-          console.log("here is list")
-          console.log(list)
           }
         },
         fail: function(){

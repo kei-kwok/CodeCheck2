@@ -48,7 +48,7 @@
  
    SearchIndex: WxApiRoot + 'main/search', //搜索关键字
    SearchResult: WxApiRoot + 'search/result', //搜索结果
-   SearchHelper: WxApiRoot + 'search/helper', //搜索帮助
+   SearchHelper: WxApiRoot + 'main/search', //搜索帮助
    SearchClearHistory: WxApiRoot + 'search/clearhistory', //搜索历史清除
  
    OrderSubmit: WxApiRoot + 'order/submit', // 提交订单
