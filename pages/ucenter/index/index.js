@@ -85,14 +85,16 @@ goChange:function(options){
   onUnload: function () {
     
   },
-  // onShow:function(){
-  //   //获取用户的登录信息
-  //   if (app.globalData.hasLogin) {
-  //     let userInfo = wx.getStorageSync('userInfo');
-  //     this.setData({
-  //       userInfo: userInfo,
-  //       hasLogin: true
-  //     });
+  onShow:function(){
+    //获取用户的登录信息
+    if (wx.getStorageSync('Authorization')) {
+      // let userInfo = wx.getStorageSync('userInfo');
+      this.setData({
+        // userInfo: userInfo,
+        hasLogin: true
+      });
+    }
+  },
 
   //     let that = this;
   //     util.request(api.UserIndex).then(function (res) {
@@ -118,6 +120,10 @@ goChange:function(options){
     if (!this.data.hasLogin) {
       wx.navigateTo({
         url: "/pages/auth/login/login"
+      });
+    }else{
+      wx.navigateTo({
+        url: "/pages/auth/imageAndName/imageAndName"
       });
     }
   },

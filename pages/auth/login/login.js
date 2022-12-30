@@ -75,6 +75,42 @@ Page({
 
     });
   },
+  test(){
+    wx.login({
+      success (res) {
+        if (res.code) {
+          //发起网络请求
+          console.log("res.code")
+          console.log(res.code)
+          wx.request({
+            url: 'https://624w0n2786.yicp.fun/main/login',
+            method: 'GET',
+            data: {
+              code: res.code
+            },
+            success: function(res) {
+              if(res.data.code===200){
+                app.globalData.hasLogin = true;
+                
+                wx.setStorageSync('Authorization',res.header['Authorization']);
+
+                wx.navigateBack({
+                  delta: 1
+                })
+              }else{
+                util.showErrorToast('微信登录失败');
+              }
+            },
+            fail: function (params) {
+              util.showErrorToast('微信登录失败');
+            }
+          })
+        } else {
+          console.log('登录失败！' + res.errMsg)
+        }
+      }
+    })
+  },
   accountLogin: function() {
     wx.navigateTo({
       url: "/pages/auth/accountLogin/accountLogin"
