@@ -14,7 +14,7 @@ page {
 .orders-switch .item {
   display: inline-block;
   height: 82rpx;
-  width: 18%;
+  width: 25%;
   padding: 0 15rpx;
   text-align: center;
 }
@@ -213,7 +213,15 @@ page {
   color: #333;
   font-size: 30rpx;
 }
-
+.goods .item .remark { 
+  display: block; 
+  float: left; 
+  height: 30rpx; 
+  line-height: 30rpx; 
+  padding-left: 10px; 
+  color: #333; 
+  font-size: 30rpx; 
+} 
 .goods .item .btn {
   height: 50rpx;
   line-height: 50rpx;

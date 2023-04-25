@@ -3,6 +3,56 @@ var api = require('../../../config/api.js');
 
 Page({
   data: {
+    orderAdd:{ 
+      "shopId": "-1283564874953968", 
+    "money": 99, 
+    "remark": "于七更斗土同九地同机定见外千属离养。", 
+    "status": 1, 
+    "orderDish": [ 
+        { 
+            "dishId": "2677265376064928", 
+            "amount": 82, 
+            "money": "87", 
+            "flavor": "看", 
+            "name": "采" 
+        } 
+    ], 
+    "orderCombo": [ 
+        { 
+            "comboId": "4547769405706530", 
+            "amount": 77, 
+            "money": 96, 
+            "flavor": "内" 
+        }, 
+        { 
+            "comboId": "5914440355776684", 
+            "amount": 76, 
+            "money": 95, 
+            "flavor": "布" 
+        }, 
+        { 
+            "comboId": "6224291080717350", 
+            "amount": 35, 
+            "money": 96, 
+            "flavor": "基" 
+        }, 
+        { 
+            "comboId": "1282253261001748", 
+            "amount": 22, 
+            "money": 66, 
+            "flavor": "设" 
+        }, 
+        { 
+            "comboId": "86526656880054", 
+            "amount": 14, 
+            "money": 97, 
+            "flavor": "交" 
+        } 
+    ] 
+    }, 
+    shopList:[], 
+    name:'', 
+    Id:0,
     orderList: [],
     showType: 0,
     page: 1,
@@ -21,30 +71,68 @@ Page({
     } catch (e) {}
 
   },
-  getOrderList() {
+  addOrder: function(){
     let that = this;
     wx.request({
       // 注意，如果小程序开启校验合法域名时必须使用https协议
       //在测试的情况下可以不开启域名校验
-      url: 'http://624w0n2786.yicp.fun//order',
-      data: {
-        // 接口设置的固定参数值
-        customerId: '1',
+      url: 'https://624w0n2786.yicp.fun/order', 
+      method: "POST", 
+      data:{ 
+        "shopId": "-1283564874953968", 
+        "money": 99, 
+        "remark": "于七更斗土同九地同机定见外千属离养。", 
+        "status": 1, 
+        "orderDish": [ 
+            { 
+                "dishId": "2677265376064928", 
+                "amount": 82, 
+                "money": "87", 
+                "flavor": "看", 
+                "name": "采" 
+            } 
+        ], 
+        "orderCombo": [ 
+            { 
+                "comboId": "4547769405706530", 
+                "amount": 77, 
+                "money": 96, 
+                "flavor": "内" 
+            }, 
+            { 
+                "comboId": "5914440355776684", 
+                "amount": 76, 
+                "money": 95, 
+                "flavor": "布" 
+            }, 
+            { 
+                "comboId": "6224291080717350", 
+                "amount": 35, 
+                "money": 96, 
+                "flavor": "基" 
+            }, 
+            { 
+                "comboId": "1282253261001748", 
+                "amount": 22, 
+                "money": 66, 
+                "flavor": "设" 
+            }, 
+            { 
+                "comboId": "86526656880054", 
+                "amount": 14, 
+                "money": 97, 
+                "flavor": "交" 
+            } 
+        ] 
       },
-      // 请求的方法
-      method: 'GET',
-      // 设置请求头，不能设置 Referer
-      header: {
-    		'Authorization': '123456' // 默认值
-  	  },
   	  // 请求成功时的处理
       success: function (res) {
         // 一般在这一打印下看看是否拿到数据
-        console.log(res.data)
-        if (res.statusCode == 200) {
+        console.log(res.data.data) 
+        if (res.data.code === 200) {
           that.setData({
             // 将res.data保存在listDate方便我们去循环遍历
-            orderList: res.data,            
+            orderList: res.data.data,            
           })
         }
       },
@@ -57,6 +145,25 @@ Page({
          });
       }
     })
+  },
+  getOrderList() {
+    let that = this;
+    wx.request({ 
+      url: "https://624w0n2786.yicp.fun/order"+"/"+that.data.customerId, 
+      method: "GET",         
+      success: function (res) { 
+        // 一般在这一打印下看看是否拿到数据 
+        if (res.data.code === 200) { 
+          that.setData({ 
+            orderList: res.data.data 
+          }) 
+          console.log(res.data.data) 
+          } 
+        }, 
+        fail: function(){ 
+          console.log("fail!!!") 
+        } 
+      }) 
     // util.request(api.OrderList, {
     //   showType: that.data.showType,
     //   page: that.data.page,
@@ -71,6 +178,29 @@ Page({
     //   }
     // });
   },
+  getOrderid() { 
+    let that = this; 
+    wx.request({ 
+      url: "https://624w0n2786.yicp.fun/restaurant", 
+      method: "GET",    
+      data:{ 
+        id: 3, 
+      },      
+      success: function (res) { 
+        // 一般在这一打印下看看是否拿到数据 
+        if (res.data.code === 200) { 
+          that.setData({ 
+            shopList: res.data.data, 
+            // name:that.data.shopList.name 
+          }) 
+          console.log(res.data.data) 
+          } 
+        }, 
+        fail: function(){ 
+          console.log("fail!!!") 
+        } 
+      }) 
+  }, 
   onReachBottom() {
     if (this.data.totalPages > this.data.page) {
       this.setData({

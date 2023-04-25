@@ -83,7 +83,7 @@ Page({
           console.log("res.code")
           console.log(res.code)
           wx.request({
-            url: 'https://624w0n2786.yicp.fun/main/login',
+            url: 'https://624w0n2786.-yicp.fun/main/login',
             method: 'GET',
             data: {
               code: res.code

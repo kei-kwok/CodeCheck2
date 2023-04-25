@@ -16,11 +16,12 @@
       "ignore": [],
       "disablePlugins": [],
       "outputPath": ""
-    }
+    },
+    "condition": false
   },
   "compileType": "miniprogram",
   "libVersion": "2.16.0",
-  "appid": "wxb809e81399177cf2",
+  "appid": "wx6fc885a726653241",
   "projectname": "dts-shop",
   "simulatorType": "wechat",
   "simulatorPluginLibVersion": {},

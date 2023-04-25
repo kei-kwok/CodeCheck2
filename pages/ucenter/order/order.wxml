@@ -4,13 +4,13 @@
       <view class="txt">全部</view>
     </view>
     <view class="item {{ showType == 1 ? 'active' : ''}}" bindtap="switchTab" data-index='1'>
-      <view class="txt">待付款</view>
+      <view class="txt">已完成</view>
     </view>
-    <!-- <view class="item {{ showType == 2 ? 'active' : ''}}" bindtap="switchTab" data-index='2'>
-      <view class="txt">待发货</view>
-    </view> -->
-    <view class="item {{ showType == 3 ? 'active' : ''}}" bindtap="switchTab" data-index='3'>
+    <view class="item {{ showType == 2 ? 'active' : ''}}" bindtap="switchTab" data-index='2'>
       <view class="txt">未完成</view>
+    </view>
+    <view class="item {{ showType == 3 ? 'active' : ''}}" bindtap="switchTab" data-index='3'>
+      <view class="txt">已取消</view>
     </view>
     <!-- <view class="item {{ showType == 4 ? 'active' : ''}}" bindtap="switchTab" data-index='4'>
       <view class="txt">待评价</view>
@@ -25,35 +25,36 @@
   <view class="orders">
     <view class="order" wx:for="{{orderList}}" wx:key="id">
       <navigator url="../orderDetail/orderDetail?id={{item.id}}"  class="h">
-        <view class="l">订单编号：{{item.orderSn}}</view>
+        <view class="l">订单编号：{{item.id}}</view>
         <view class="r">{{item.orderStatusText}}</view>
       </navigator>
       <navigator url="../orderDetail/orderDetail?id={{item.id}}" class="goods">
-        <view class="item" wx:for="{{item.goodsList}}" wx:key="id" wx:for-item="gitem">
-          <view class="img">
+        <view class="item" wx:for="{{orderList}}" wx:key="id" wx:for-item="gitem">
+          <!-- <view class="img">
             <image src="{{gitem.picUrl}}"></image>
-          </view>
+          </view> -->
           <view class="info">
             <view class="t">
-              <text class="name">{{gitem.goodsName}}</text>
+              <text class="name">商店名称{{"世贸商城"}}</text>
             </view>
             <view class="t">
               <text class="attr">{{gitem.specifications}}</text>
-              <text class="number">共 {{gitem.number}} 件商品</text>
+              <text class="number">共 {{gitem.orderCombo[1].amount}} 件商品</text>
             </view>
-            <view class="price">￥{{gitem.price}}</view>
-            <view class="btn active" wx:if="{{item.handleOption.comment && (gitem.comment == 0)}}">
+            <view class="price">￥{{gitem.orderCombo[1].money}}</view> 
+            <text class="remark">备注：{{gitem.remark}}</text> 
+            <!-- <view class="btn active" wx:if="{{item.handleOption.comment && (gitem.comment == 0)}}">
               <navigator url="../../commentPost/commentPost?orderId={{gitem.orderId}}&&valueId={{gitem.goodsId}}&type=0">去评价</navigator>
             </view>
             <view class="btn active" wx:if="{{item.handleOption.rebuy}}">
               <navigator url="../../goods/goods?id={{gitem.goodsId}}">再次购买</navigator>
-            </view>
+            </view> -->
           </view>
         </view>
       </navigator>
       <view class="b">
         <view class="l">实付：
-          <text class="cost">￥{{item.actualPrice}}</text>
+          <text class="cost">￥{{item.money}}</text>
         </view>
         <view class="r">
         <view class="btn active" data-index="{{item.id}}" bindtap="cancelOrder" wx:if="{{item.handleOption.cancel}}">取消订单</view>
